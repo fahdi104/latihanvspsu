@@ -1,0 +1,16 @@
+dt=2000
+min=1
+max=200
+ns=1501
+suaddhead < seismicX.H@ ns=$ns |
+sushw key=dt a=$dt |
+suwind max=$max |
+suxwigb title="UX : P-wave and Rayleigh wave in halfspace model (z_rec=0.0)" perc=97 &
+
+
+suaddhead < seismicZ.H@ ns=$ns |
+sushw key=dt a=$dt |
+suwind max=$max|
+suxwigb title="UZ : P-wave and Rayleigh wave in halfspace model (z_rec=3.0)" perc=97 &
+
+

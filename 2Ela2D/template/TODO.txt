@@ -1,0 +1,17 @@
+PARAMETER SUBTITUTION
+INPUT HEADER TO SU FILE
+
+Header penting
+SRC_X = sx
+SRC_Y = sy
+SRC_Z = selev
+
+RCV_X = gx 
+RCV_Y = gy
+RCV_Z = gelev = negative below vertical datum
+
+CDP 
+TRACL
+
+TRANSIT_TIME = gut
+TRANSIT_TIME_SRD = sut

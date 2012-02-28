@@ -1,0 +1,23 @@
+INPUTFILE for ELA2D by Joachim Falk! DO NOT change the order of the lines
+Kommentar : 
+order of time integration (2nd or 4th)___________________________________
+4
+dt[s]__________tmax[s]____________f_cent[Hz]_____________________________
+seddt		sedtmax		    sedf_cent
+sp(x)________sp(z)______________________________________(source coord [m])
+src_x	     src_z 
+source type (1-3)_________wavelet type (1-4)_____________________________
+1			  1
+active (0/1)____write stride [timesteps]________________(seismic traces)_
+1         	1
+active (0/1)____delay [s]_____interval [s]______________(diashow)________
+1         	0.1	   	0.08
+Higdon (0/1)__________Free_Surf (0/1)___Smoothing the model______________
+1			1			0
+active (0/1)____taperwidth_[m]_____percentage___________(tapered bound.)_
+1		150.0 		   25.0
+=========================================================================
+=========================================================================
+receiver-coordinates [m]
+nrec		! number of receivers
+pos_X     pos_Z  (meter in relation to left top corner of the model)
