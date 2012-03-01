@@ -1,0 +1,18 @@
+## @file README
+## @todo clean up, update, enhance!
+## @author fahdi@gm2001.net
+## @date February 2012
+
+DESCRIPTION
+In this folder we will exercising how to create flat model using unif2 from SU
+Open and edit CreateFlatModel.sh and read the comment on each line to modify. 
+It's also good practice to see unif2 manual 
+
+Within this exercise we will also generate shooting geometry that we will use for next exercise in building synthetic data.
+
+HOW TO RUN
+1. Generate Model
+$./CreateFlatModel.sh
+
+2. To display the model
+$./DisplayFlatModel.sh 

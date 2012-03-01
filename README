@@ -1,3 +1,11 @@
 VSP Processing Exercise using Seismic Unix
 fahdi@gm2001.net
 February 2012
+
+DESCRIPTION
+
+A sets of script to model and process simple geometry/simple VSP data 
+
+REQUIREMENT 
+- Seismic Unix (http://www.cwp.mines.edu/cwpcodes/)
+- Ela2D (Get copy at http://www.gm2001.net/latihanvspsu/)

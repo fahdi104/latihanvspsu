@@ -1,0 +1,27 @@
+## @file README
+## @todo clean up, update, enhance!
+## @author fahdi@gm2001.net
+## @date February 2012
+
+DESCRIPTION
+*** Before run, please manually copy the SU file that you want to process to this directory 
+
+Wavefield separation is another crucial step in VSP processing. We are here to get the upgoing (reflection wave) from the total wavefield. As we have seen between downgoing and upgoing can be differentiate clearly by their slope, downgoing is positive towards depth, and upgoing is negative. Based on these two different slopes, we can separate this using velocity filter (slope ~ velocity), by aligning them along the slopes. After alignment, the signal that has same slopes will be coherent, and using median filter, you can get coherent signal, and the uncoherent signal will be the residual signal (subtracted from total signal). 
+
+For example, to extract downgoing, you will align the data by subracting using TT, the downgoing will be coherent along the TT, and you can run median filter to extract this downgoing. The uncoherent signal will be the residual. 
+
+Normally the workflow is you extract downgoing first, and subtract this downgoing from the total wavefield. You will get residual wavefield (residual1 =  total-downgoing). And you run second velocity filter, to extract upgoing by aligning to the upgoing slope, the input for this is the residual wavefield. 
+
+Input for separation is normally wavefield after preprocessing.
+
+HOW TO RUN
+*** Before run, please manually copy the SU file that you want to process to this directory 
+$cp ../4Preprocessing/Z_prepro.su .
+$cp ../3BreakTimePick/tt_auto_smooth.txt .
+
+1. Open Separation.sh
+2. Edit as necesary
+	- level_down and level_up HAS TO BE ODD number
+	- depend on data, normally level_down is higher than level_up
+
+

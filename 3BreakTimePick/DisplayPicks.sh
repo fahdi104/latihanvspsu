@@ -1,15 +1,23 @@
 #!/bin/bash
-## @file DisplayPicks.sh
-## @brief Display T-D curve
-## @author fahdi@gm2001.net
-## @date February 2012
-## @todo run cosine correction, compute tt correction to SRD, compute interval velocity, rms velocity
-## @todo input well geometry for cosine correction
-## @todo plotting velocity etc etc
 
-input=realZ.su
-input_tt=tt_picks_auto_smooth.txt
+## /**
+## * @file DisplayPicks.sh
+## * @brief Display T-D curve, Velocity, etc
+## * @author fahdi@gm2001.net
+## * @date February 2012
+## * @todo run cosine correction, compute tt correction to SRD, compute interval velocity, rms velocity
+## * @todo input well geometry for cosine correction
+## * @todo plotting velocity etc etc
+## * @param input SU file to analyze
+## * @param input_tt Transit Time file to check
+## * @param output_tt Transit Time after correction To SRD
+## */
+
+#input
+input=Z.su
+input_tt=tt_picks_auto_smooth.txt 
 output_tt=tt_picks_correctionToSRD.txt
+
 
 #dipslay pick
 nrec=($(wc -l $input_tt | awk '{print $1}'))

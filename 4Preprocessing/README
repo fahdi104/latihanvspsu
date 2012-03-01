@@ -1,0 +1,36 @@
+## @file README
+## @todo clean up, update, enhance!
+## @author fahdi@gm2001.net
+## @date February 2012
+
+DESCRIPTION
+*** Before run, please manually copy the SU file that you want to process to this directory 
+
+This steps is to perform preprocessing before we process VSP signal.
+
+The BPF is required to eliminate noise based on their frequency content. The frequency of data needs to be analyzed first, you can use FrequencyAnalysis.sh script to do this
+
+For some VSP tools, the coupling between tools and formation is not the same, and sometimes there is energy variation between shot to shot, which makes median filter not working properly. This is compensated by statistically normalize the data based on downgoing event. SU does not have the capability to do RMS calculation based on isolated downgoing event (say analyze for 200 ms after first break), but using sugain to normalize the data should be enough for this exercise. 
+
+The Time Varying Gain/Exponential Gain is required to correct the spherical divergence effect.
+
+Workflow that has been set on Preprocessing.sh is just based on personal experience, you can modify it as necessary. The workflow is BPF + RMS Normalization + Time Varying Gain
+
+HOW TO RUN
+*** Before run, please manually copy the SU file that you want to process to this directory 
+$cp ../3Ela2D/Z-picked.su .
+
+-Frequency Analysis
+1. Open FreqeuncyAnalysis.sh, and edit as necesary
+2. This script is pretty straightforward
+3. Run by typing
+$./FrequencyAnalsysis.sh
+
+-Preprocessing
+1. Open Preprocessing.sh, and edit as necessary
+1. Open FreqeuncyAnalysis.sh, and edit as necesary
+2. This script is pretty straightforward
+3. Run by typing
+$./FrequencyAnalsysis.sh
+4. QC
+

@@ -1,0 +1,17 @@
+## @file README
+## @todo clean up, update, enhance!
+## @author fahdi@gm2001.net
+## @date February 2012
+
+DESCRIPTION
+Here, we try to generate synthetic data and see what kind of VSP wave types. We will be using Ela2D (Falk,????). 
+The input for this exercise is binary model (Vp,Vs,density) with [nx][nz], besides the flat model that generate earlier, you can make your own model. 
+Output of this Ela2D modeling is horizontal and vertical component.
+
+HOW TO RUN
+0. Open CreateElasticSynthetic.sh, and modify as necessary based on comment on the script
+1. Run Modeling, this may take sometimes, modeling is finished if there is no error, and you can see your data
+$./CreateElasticSynthetic.sh
+
+2. To display the synthetic data
+$./DisplaySynthetic.sh

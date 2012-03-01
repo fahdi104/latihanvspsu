@@ -1,0 +1,39 @@
+## @file README
+## @todo clean up, update, enhance!
+## @author fahdi@gm2001.net
+## @date February 2012
+
+DESCRIPTION
+*** Before run, please manually copy the SU file that you want to pick to this directory 
+
+This steps is to perform break time picking which is crucial for every vsp job. 
+
+SU provides good tools but not yet sophisticated and user friendly to do manual break time pick. The script for manual picking using ximage and button [s] functionality is BreakTimePick.sh
+
+We are going to use automatic break time picking from SU, and smooth it a little bit using octave script, this will be done on FBAutoPick.sh
+
+A QC of breaktime picking, besides visual QC, is to compute interval velocity, this will be done on DisplayPicks.sh.
+
+The feature of transit time correction to seismic reference datum (SRD) through cosine correction has not been implemented.
+
+HOW TO RUN
+*** Before run, please manually copy the SU file that you want to pick to this directory for example copy the Z component file
+$cp ../2Ela2D/Z.su .
+
+- Manual Breaktime Picking
+1. Open BreakTimePick.sh and change the input to what you need
+2. run 
+$./BreakTimePick.sh
+3. After display data, move your cursor on break time and hit S on your keyboard
+4. If you have finished your picking, close your window by pressing Q on your keyboard
+
+-Automatic Breaktime Picking
+1. Open FBAutoPicks.sh and change it as necesary to what you need
+2. run 
+$./FBAutoPicks.sh
+
+-Display Picks, QC, and Smoothing
+Run
+1. Open DisplayPicks.sh and change it as necesary to what you need
+$./DisplayPicks.sh
+
