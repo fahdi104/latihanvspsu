@@ -5,4 +5,4 @@
 ## @date February 2012
 
 rm *.su
-#rm *.txt
+rm *.txt

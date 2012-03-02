@@ -13,7 +13,7 @@ file = {
 _EnD_oF_dEf_TeXt_;
       var-mem-name = 'input';
       var-mem-initializer = <<_EnD_oF_dEf_TeXt_
-VSI_007_A_gac_wavefield_z_resize.sgy
+VSI_007_A_gac_wavefield_z.sgy
 output=realZ.su
 
 # set parameter
@@ -27,7 +27,7 @@ segyread tape=$input verbose=1 endian=0 | suwind tmin=$tmin tmax=$tmax > $output
 sugethw < $output.tmp1 key=lagb
 _EnD_oF_dEf_TeXt_;
       var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/0ImportSEGY/ImportSEGY.sh';
-      var-mem-desc-line = '27';
+      var-mem-desc-line = '28';
       var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -50,6 +50,7 @@ Clean.sh can be used to clean up
  @param output Specify your output SU file
  @param tmin Minimum Output time
  @param tmax Maximum Output time
+\xrefitem todo 1.
 _EnD_oF_dEf_TeXt_;
 }; /* file */
 file = {
@@ -312,7 +313,7 @@ f_cent=30 #dominant frequency
 #setting source
 _EnD_oF_dEf_TeXt_;
       var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/2Ela2D/CreateElasticSynthetic.sh';
-      var-mem-desc-line = '36';
+      var-mem-desc-line = '40';
       var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -333,7 +334,7 @@ _EnD_oF_dEf_TeXt_;
 0.002 #set timestep and will also be samplin rate for out put data
 _EnD_oF_dEf_TeXt_;
       var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/2Ela2D/CreateElasticSynthetic.sh';
-      var-mem-desc-line = '31';
+      var-mem-desc-line = '35';
       var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -351,7 +352,7 @@ should use appropriate dt for time step modeling *todo implement resampling for 
 _EnD_oF_dEf_TeXt_;
       var-mem-name = 'from';
       var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/2Ela2D/CreateElasticSynthetic.sh';
-      var-mem-desc-line = '36';
+      var-mem-desc-line = '40';
       var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -381,7 +382,7 @@ outputZ=Z.su #specify filename for vertical component
  * @todo this dt is for FD timestep modeling
 _EnD_oF_dEf_TeXt_;
       var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/2Ela2D/CreateElasticSynthetic.sh';
-      var-mem-desc-line = '29';
+      var-mem-desc-line = '33';
       var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -401,10 +402,14 @@ Model can be displayed by typing ./DisplayModel.sh
 
  @author fahdi@gm2001.net
  @date February 2012
-\xrefitem todo 1. @param nx Number of model sample in X direction
+\xrefitem todo 2. @param nx Number of model sample in X direction
  @param dx Model sampling rate in X direction
  @param nz Number of model sample in Z direction
  @param dz Model sampling rate in Z direction
+ @param outputX Output for horizontal component
+ @param outputZ Output for vertical component
+ @param source_listing ASCII file for source listing (filename:source_list.txt, please do not change the filename)
+ @param receiver_listing ASCII file for receiver listing (filename:receiver_list.txt, please do not change the filename)
 _EnD_oF_dEf_TeXt_;
 }; /* file */
 file = {
@@ -472,7 +477,7 @@ _EnD_oF_dEf_TeXt_;
   file-documentation = <<_EnD_oF_dEf_TeXt_
  @author fahdi@gm2001.net
  @date February 2012
-\xrefitem todo 2. @param input SU file to analyze
+\xrefitem todo 3. @param input SU file to analyze
  @param input_tt Transit Time file to check
  @param output_tt Transit Time after correction To SRD
 _EnD_oF_dEf_TeXt_;
@@ -511,7 +516,7 @@ _EnD_oF_dEf_TeXt_;
   file-documentation = <<_EnD_oF_dEf_TeXt_
  @author fahdi@gm2001.net
  @date February 2012
-\xrefitem todo 3. @param input SU file to be picked
+\xrefitem todo 4. @param input SU file to be picked
  @param output SU file after picked
  @param output_picks ASCII file for automatic Transit Time pick result
 _EnD_oF_dEf_TeXt_;
@@ -527,7 +532,7 @@ _EnD_oF_dEf_TeXt_;
   file-documentation = <<_EnD_oF_dEf_TeXt_
  @author fahdi@gm2001.net
  @date February 2012
-\xrefitem todo 4. @param input SU file to analyze
+\xrefitem todo 5. @param input SU file to analyze
  @param output_fz Spectrum of Frequency vs Depth in SU format
  @param output_fk Spectrum of Frequency vs Wavenumber in SU format
 _EnD_oF_dEf_TeXt_;
@@ -551,12 +556,47 @@ output_bpf=Z_picked_bpf.su # output after BPF
 output_norm=Z_picked_bpf_norm.su #output after BPF followed RMS Normalization
 output_tvg=Z_picked_bpf_norm_tvg.su #output after BPF followed RMS Normalization followed by TimeVaryingGain
 final_output=Z_prepro.su #housekeeping to make naming convention
+tt=tt-header.txt
 
 #set parameter
 bpf=3
 _EnD_oF_dEf_TeXt_;
       var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/4Preprocessing/Preprocessing.sh';
-      var-mem-desc-line = '26';
+      var-mem-desc-line = '27';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'Preprocessing_8sh_1aaeddbfc5971800025f7a94407b325777';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'tpow';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+1.1 #multiply data by t^tpow
+
+#bpf
+sufilter < $input f=$bpf > $output_bpf
+
+#normalize by dividing with RMS
+sugain < $output_bpf pbal=1 > $output_norm
+
+#run exponential gain
+sugain < $output_norm tpow=$tpow > $output_tvg
+cp $output_tvg $final_output #housekeeping to make naming convention
+
+#display
+nrec=($(wc -l $tt | awk '{print $1}')) #housekeeping
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/4Preprocessing/Preprocessing.sh';
+      var-mem-desc-line = '41';
       var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -573,7 +613,7 @@ _EnD_oF_dEf_TeXt_;
   file-documentation = <<_EnD_oF_dEf_TeXt_
  @author fahdi@gm2001.net
  @date February 2012
-\xrefitem todo 5. @param input SU file to process
+\xrefitem todo 6. @param input SU file to process
  @param output_bpf output SU file after BPF filter
  @param bpf Four points of BPF filter
  @param output_norm output SU file after normalization (RMS whole window operation)
@@ -673,7 +713,7 @@ _EnD_oF_dEf_TeXt_;
   file-documentation = <<_EnD_oF_dEf_TeXt_
  @author fahdi@gm2001.net
  @date February 2012
-\xrefitem todo 6. @param input SU file to separate after PreProcessing
+\xrefitem todo 7. @param input SU file to separate after PreProcessing
  @param output_dn Downgoing wavefield
  @param output_res Residual Wavefield after downgoing wavefield subtraction
  @param output_up Upgoing wavefield (Enhanced Residual)
@@ -769,7 +809,7 @@ _EnD_oF_dEf_TeXt_;
   file-documentation = <<_EnD_oF_dEf_TeXt_
  @author fahdi@gm2001.net
  @date February 2012
-\xrefitem todo 7. @param input_up Upgoing wavefield to be deconvolved
+\xrefitem todo 8. @param input_up Upgoing wavefield to be deconvolved
  @param tt ASCII file of Transit Time picks data
  @param output_pef_up Upgoing Wavefield after predictive decon
  @param output_pef_up_enh Enhancement of Upgoing Wavefield after predictive decon
@@ -864,7 +904,7 @@ _EnD_oF_dEf_TeXt_;
   file-documentation = <<_EnD_oF_dEf_TeXt_
  @author fahdi@gm2001.net
  @date February 2012
-\xrefitem todo 8. @param input_dn Downgoing wavefield
+\xrefitem todo 9. @param input_dn Downgoing wavefield
  @param tt ASCII file of Transit Time picks data
  @param output_pef_dn Downgoing wavefield after predictive deconvolution
  @param minlag First lag of prediction filter (sec)
@@ -913,7 +953,7 @@ _EnD_oF_dEf_TeXt_;
   file-documentation = <<_EnD_oF_dEf_TeXt_
  @author fahdi@gm2001.net
  @date February 2012
-\xrefitem todo 9. @param input_decon_enh_up Input is final upgoing wavefield (after decon)
+\xrefitem todo 10. @param input_decon_enh_up Input is final upgoing wavefield (after decon)
  @param output_cstack Corridor Stack Output
  @param tt ASCII file of Transit Time picks data
 _EnD_oF_dEf_TeXt_;

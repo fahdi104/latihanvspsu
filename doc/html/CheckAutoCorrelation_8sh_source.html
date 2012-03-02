@@ -99,11 +99,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00035"></a>00035 
 <a name="l00036"></a>00036 <span class="preprocessor">#check autocorrelation before PEF</span>
 <a name="l00037"></a>00037 <span class="preprocessor"></span>sugain &lt; $input_dn tpow=1 | suacor sym=1 norm=1 \
-<a name="l00038"></a>00038            | suxwigb perc=99 label1=<span class="stringliteral">&quot;Time (sec)&quot;</span> label2=<span class="stringliteral">&quot;Level Number&quot;</span>  title=<span class="stringliteral">&quot;Autocorrelation&quot;</span> &amp;
+<a name="l00038"></a>00038            | suxwigb perc=95 label1=<span class="stringliteral">&quot;Time (sec)&quot;</span> label2=<span class="stringliteral">&quot;Level Number&quot;</span>  title=<span class="stringliteral">&quot;Autocorrelation&quot;</span> wbox=550 xbox=10&amp;
 <a name="l00039"></a>00039 <span class="preprocessor">#Apply to Attack Reveberations</span>
 <a name="l00040"></a>00040 <span class="preprocessor"></span>supef &lt; $input_dn minlag=$minlag maxlag=$maxlag pnoise=$pnoise  | sufilter f=$bpf &gt; $output_pef_dn
 <a name="l00041"></a>00041 sugain &lt; $output_pef_dn tpow=1 | suacor  sym=1 norm=1  \
-<a name="l00042"></a>00042            | suxwigb title=<span class="stringliteral">&quot;Autocor after PEF minlag:$minlag s, maxlag:$maxlag s&quot;</span> perc=99 &amp;
+<a name="l00042"></a>00042            | suxwigb title=<span class="stringliteral">&quot;Autocor after PEF minlag:$minlag s, maxlag:$maxlag s&quot;</span> perc=95 label1=<span class="stringliteral">&quot;Time (sec)&quot;</span> label2=<span class="stringliteral">&quot;Level Number&quot;</span> wbox=550 xbox=570&amp;
 <a name="l00043"></a>00043 
 <a name="l00044"></a>00044 
 <a name="l00045"></a>00045 <span class="preprocessor">#display pef application on downgoing signal</span>
@@ -112,8 +112,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00048"></a>00048 sushw &lt; $output_pef_dn infile=tt_header.bin key=delrt | suchw key1=delrt key2=delrt a=$al b=$fac \
 <a name="l00049"></a>00049            | sushift tmin=$tmin tmax=$tmax|suwind tmin=0.1 tmax=0.8&gt; $output_pef_dn.align.tmp
 <a name="l00050"></a>00050 
-<a name="l00051"></a>00051 suxwigb &lt; $input_dn.align.tmp perc=95 title=<span class="stringliteral">&quot;Downgoing Before PEF Decon&quot;</span> &amp;
-<a name="l00052"></a>00052 suxwigb &lt; $output_pef_dn.align.tmp perc=95 title=<span class="stringliteral">&quot;Downgoing  After PEF Decon (minlag:$minlag s, maxlag:$maxlag s)&quot;</span>  &amp;
+<a name="l00051"></a>00051 suxwigb &lt; $input_dn.align.tmp perc=95 title=<span class="stringliteral">&quot;Downgoing Before PEF Decon&quot;</span> label1=<span class="stringliteral">&quot;Time (sec)&quot;</span> label2=<span class="stringliteral">&quot;Level Number&quot;</span>  wbox=550 xbox=10&amp;
+<a name="l00052"></a>00052 suxwigb &lt; $output_pef_dn.align.tmp perc=95 title=<span class="stringliteral">&quot;Downgoing  After PEF Decon (minlag:$minlag s, maxlag:$maxlag s)&quot;</span>  label1=<span class="stringliteral">&quot;Time (sec)&quot;</span> label2=<span class="stringliteral">&quot;Level Number&quot;</span>  wbox=550 xbox=570&amp;
 <a name="l00053"></a>00053 
 <a name="l00054"></a>00054 
 </pre></div></div>
@@ -135,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 1 2012 14:18:31 for Latihan VSP SU by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 2 2012 21:55:54 for Latihan VSP SU by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.5.1
 </small></address>

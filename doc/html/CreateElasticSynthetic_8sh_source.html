@@ -78,84 +78,84 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="CreateElasticSynthetic_8sh.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#!/bin/bash</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span>
-<a name="l00018"></a>00018 <span class="preprocessor">#input</span>
-<a name="l00019"></a>00019 <span class="preprocessor"></span><span class="preprocessor">#define model dimension</span>
-<a name="l00020"></a>00020 <span class="preprocessor"></span>nx=100
-<a name="l00021"></a>00021 dx=10
-<a name="l00022"></a>00022 nz=300
-<a name="l00023"></a>00023 dz=10
-<a name="l00024"></a>00024 outputX=HMX.su #specify filename <span class="keywordflow">for</span> horizontal component
-<a name="l00025"></a>00025 outputZ=Z.su #specify filename <span class="keywordflow">for</span> vertical component
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027 <span class="preprocessor">#set parameter</span>
-<a name="l00028"></a>00028 <span class="preprocessor"></span><span class="preprocessor">#Ela2D FD setup</span>
-<a name="l00029"></a>00029 <span class="preprocessor"></span> * @todo <span class="keyword">this</span> dt is <span class="keywordflow">for</span> FD timestep modeling, should use appropriate dt <span class="keywordflow">for</span> time step modeling
-<a name="l00030"></a>00030  * @todo implement resampling <span class="keywordflow">for</span> <span class="keyword">final</span> su data
-<a name="l00031"></a>00031 dt=0.002 #<span class="keyword">set</span> timestep and will also be samplin rate <span class="keywordflow">for</span> out put data, @TODO CHECK!!
-<a name="l00032"></a>00032 tmax=3  #maximum recording time
-<a name="l00033"></a>00033 f_cent=30 #dominant frequency
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035 <span class="preprocessor">#source</span>
-<a name="l00036"></a>00036 <span class="preprocessor"></span><span class="preprocessor">#setting source, use *.txt from 1BuildFlatModel, convert it to binary for SU header requirement</span>
-<a name="l00037"></a>00037 <span class="preprocessor"></span><span class="preprocessor">#DO NOT MODIFY LINE AFTER THIS, UNLESS YOU KNOW WHAT YOU ARE DOING</span>
-<a name="l00038"></a>00038 <span class="preprocessor"></span>
-<a name="l00039"></a>00039 <span class="preprocessor">#copy receiver from 1BuildFlatModel</span>
-<a name="l00040"></a>00040 <span class="preprocessor"></span>cp ../1BuildFlatModel<span class="comment">/*.dat .</span>
-<a name="l00041"></a>00041 <span class="comment">cp ../1BuildFlatModel/*.txt .</span>
-<a name="l00042"></a>00042 <span class="comment"></span>
-<a name="l00043"></a>00043 <span class="comment">#flip receiver list for Ela2D requirement</span>
-<a name="l00044"></a>00044 <span class="comment">awk &#39;{print &quot;\t&quot;, $2, &quot;\t&quot;, $1}&#39; receiver_list.txt &gt; receiver_list.tmp </span>
-<a name="l00045"></a>00045 <span class="comment">awk &#39;{print &quot;\t&quot;, $2, &quot;\t&quot;, $1}&#39; source_list.txt &gt; source_list.tmp</span>
-<a name="l00046"></a>00046 <span class="comment">mv receiver_list.tmp receiver_list.txt</span>
-<a name="l00047"></a>00047 <span class="comment">mv source_list.tmp source_list.txt</span>
-<a name="l00048"></a>00048 <span class="comment"></span>
-<a name="l00049"></a>00049 <span class="comment">a2b &lt; source_list.txt &gt; source_list.bin</span>
-<a name="l00050"></a>00050 <span class="comment">src_x=($(awk &#39;{print $1}&#39; source_list.txt))</span>
-<a name="l00051"></a>00051 <span class="comment">src_z=($(awk &#39;{print $2}&#39; source_list.txt))</span>
-<a name="l00052"></a>00052 <span class="comment">#load receiver</span>
-<a name="l00053"></a>00053 <span class="comment">a2b &lt; receiver_list.txt &gt; receiver_list.bin</span>
-<a name="l00054"></a>00054 <span class="comment">nrec=($(wc -l receiver_list.txt | awk &#39;{print $1}&#39;))</span>
-<a name="l00055"></a>00055 <span class="comment">ns=($(echo $tmax/$dt+1 |bc -l))</span>
-<a name="l00056"></a>00056 <span class="comment"></span>
-<a name="l00057"></a>00057 <span class="comment">#substitute all input variables to Ela2D param &amp; in file</span>
-<a name="l00058"></a>00058 <span class="comment">sed -e &quot;s/src_x/$src_x/&quot; -e &quot;s/src_z/$src_z/&quot; \</span>
-<a name="l00059"></a>00059 <span class="comment">-e &quot;s/seddt/$dt/&quot; -e &quot;s/sedtmax/$tmax/&quot; -e &quot;s/sedf_cent/$f_cent/&quot; \</span>
-<a name="l00060"></a>00060 <span class="comment">-e &quot;s/nrec/$nrec/&quot; \</span>
-<a name="l00061"></a>00061 <span class="comment"> &lt; ./template/ela2d.in.template &gt; ela2d.in.tmp</span>
-<a name="l00062"></a>00062 <span class="comment"></span>
-<a name="l00063"></a>00063 <span class="comment">sed -e &quot;s/seddx/$dx/&quot; -e &quot;s/seddz/$dz/&quot; \</span>
-<a name="l00064"></a>00064 <span class="comment">-e &quot;s/sednx/$nx/&quot; -e &quot;s/sednz/$nz/&quot; \</span>
-<a name="l00065"></a>00065 <span class="comment"> &lt; ./template/grid.param.template &gt; grid.param</span>
-<a name="l00066"></a>00066 <span class="comment"> </span>
-<a name="l00067"></a>00067 <span class="comment">cat ela2d.in.tmp receiver_list.txt &gt; ela2d.in</span>
-<a name="l00068"></a>00068 <span class="comment"></span>
-<a name="l00069"></a>00069 <span class="comment">#Running Ela2D</span>
-<a name="l00070"></a>00070 <span class="comment">echo &quot;Start Ela2D&quot;</span>
-<a name="l00071"></a>00071 <span class="comment">ela2d</span>
+<a name="l00022"></a>00022 <span class="preprocessor">#input</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span><span class="preprocessor">#define model dimension</span>
+<a name="l00024"></a>00024 <span class="preprocessor"></span>nx=100
+<a name="l00025"></a>00025 dx=10
+<a name="l00026"></a>00026 nz=300
+<a name="l00027"></a>00027 dz=10
+<a name="l00028"></a>00028 outputX=HMX.su #specify filename <span class="keywordflow">for</span> horizontal component
+<a name="l00029"></a>00029 outputZ=Z.su #specify filename <span class="keywordflow">for</span> vertical component
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="preprocessor">#set parameter</span>
+<a name="l00032"></a>00032 <span class="preprocessor"></span><span class="preprocessor">#Ela2D FD setup</span>
+<a name="l00033"></a>00033 <span class="preprocessor"></span> * @todo <span class="keyword">this</span> dt is <span class="keywordflow">for</span> FD timestep modeling, should use appropriate dt <span class="keywordflow">for</span> time step modeling
+<a name="l00034"></a>00034  * @todo implement resampling <span class="keywordflow">for</span> <span class="keyword">final</span> su data
+<a name="l00035"></a>00035 dt=0.002 #<span class="keyword">set</span> timestep and will also be samplin rate <span class="keywordflow">for</span> out put data, @TODO CHECK!!
+<a name="l00036"></a>00036 tmax=3  #maximum recording time
+<a name="l00037"></a>00037 f_cent=30 #dominant frequency
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039 <span class="preprocessor">#source</span>
+<a name="l00040"></a>00040 <span class="preprocessor"></span><span class="preprocessor">#setting source, use *.txt from 1BuildFlatModel, convert it to binary for SU header requirement</span>
+<a name="l00041"></a>00041 <span class="preprocessor"></span><span class="preprocessor">#DO NOT MODIFY LINE AFTER THIS, UNLESS YOU KNOW WHAT YOU ARE DOING</span>
+<a name="l00042"></a>00042 <span class="preprocessor"></span>
+<a name="l00043"></a>00043 <span class="preprocessor">#copy receiver from 1BuildFlatModel</span>
+<a name="l00044"></a>00044 <span class="preprocessor"></span>cp ../1BuildFlatModel<span class="comment">/*.dat .</span>
+<a name="l00045"></a>00045 <span class="comment">cp ../1BuildFlatModel/*.txt .</span>
+<a name="l00046"></a>00046 <span class="comment"></span>
+<a name="l00047"></a>00047 <span class="comment">#flip receiver list for Ela2D requirement</span>
+<a name="l00048"></a>00048 <span class="comment">awk &#39;{print &quot;\t&quot;, $2, &quot;\t&quot;, $1}&#39; receiver_list.txt &gt; receiver_list.tmp </span>
+<a name="l00049"></a>00049 <span class="comment">awk &#39;{print &quot;\t&quot;, $2, &quot;\t&quot;, $1}&#39; source_list.txt &gt; source_list.tmp</span>
+<a name="l00050"></a>00050 <span class="comment">mv receiver_list.tmp receiver_list.txt</span>
+<a name="l00051"></a>00051 <span class="comment">mv source_list.tmp source_list.txt</span>
+<a name="l00052"></a>00052 <span class="comment"></span>
+<a name="l00053"></a>00053 <span class="comment">a2b &lt; source_list.txt &gt; source_list.bin</span>
+<a name="l00054"></a>00054 <span class="comment">src_x=($(awk &#39;{print $1}&#39; source_list.txt))</span>
+<a name="l00055"></a>00055 <span class="comment">src_z=($(awk &#39;{print $2}&#39; source_list.txt))</span>
+<a name="l00056"></a>00056 <span class="comment">#load receiver</span>
+<a name="l00057"></a>00057 <span class="comment">a2b &lt; receiver_list.txt &gt; receiver_list.bin</span>
+<a name="l00058"></a>00058 <span class="comment">nrec=($(wc -l receiver_list.txt | awk &#39;{print $1}&#39;))</span>
+<a name="l00059"></a>00059 <span class="comment">ns=($(echo $tmax/$dt+1 |bc -l))</span>
+<a name="l00060"></a>00060 <span class="comment"></span>
+<a name="l00061"></a>00061 <span class="comment">#substitute all input variables to Ela2D param &amp; in file</span>
+<a name="l00062"></a>00062 <span class="comment">sed -e &quot;s/src_x/$src_x/&quot; -e &quot;s/src_z/$src_z/&quot; \</span>
+<a name="l00063"></a>00063 <span class="comment">-e &quot;s/seddt/$dt/&quot; -e &quot;s/sedtmax/$tmax/&quot; -e &quot;s/sedf_cent/$f_cent/&quot; \</span>
+<a name="l00064"></a>00064 <span class="comment">-e &quot;s/nrec/$nrec/&quot; \</span>
+<a name="l00065"></a>00065 <span class="comment"> &lt; ./template/ela2d.in.template &gt; ela2d.in.tmp</span>
+<a name="l00066"></a>00066 <span class="comment"></span>
+<a name="l00067"></a>00067 <span class="comment">sed -e &quot;s/seddx/$dx/&quot; -e &quot;s/seddz/$dz/&quot; \</span>
+<a name="l00068"></a>00068 <span class="comment">-e &quot;s/sednx/$nx/&quot; -e &quot;s/sednz/$nz/&quot; \</span>
+<a name="l00069"></a>00069 <span class="comment"> &lt; ./template/grid.param.template &gt; grid.param</span>
+<a name="l00070"></a>00070 <span class="comment"> </span>
+<a name="l00071"></a>00071 <span class="comment">cat ela2d.in.tmp receiver_list.txt &gt; ela2d.in</span>
 <a name="l00072"></a>00072 <span class="comment"></span>
-<a name="l00073"></a>00073 <span class="comment">echo &quot;Convert Ela2D output to SU Format&quot;</span>
-<a name="l00074"></a>00074 <span class="comment">dtms=($(echo $dt*1000000 |bc -l))</span>
-<a name="l00075"></a>00075 <span class="comment">suaddhead &lt; seismicX.H@ ns=$ns |</span>
-<a name="l00076"></a>00076 <span class="comment">sushw key=dt a=$dtms |</span>
-<a name="l00077"></a>00077 <span class="comment">sushw key=gx,gelev infile=receiver_list.bin |</span>
-<a name="l00078"></a>00078 <span class="comment">sushw key=sx a=$src_x b=0 j=$nrec |</span>
-<a name="l00079"></a>00079 <span class="comment">sushw key=selev a=$src_z b=0 j=$nrec &gt; $outputX</span>
-<a name="l00080"></a>00080 <span class="comment"></span>
-<a name="l00081"></a>00081 <span class="comment">suaddhead &lt; seismicZ.H@ ns=$ns |</span>
-<a name="l00082"></a>00082 <span class="comment">sushw key=dt a=$dtms |</span>
-<a name="l00083"></a>00083 <span class="comment">sushw key=gx,gelev infile=receiver_list.bin |</span>
-<a name="l00084"></a>00084 <span class="comment">sushw key=sx a=$src_x b=0 j=$nrec  |</span>
-<a name="l00085"></a>00085 <span class="comment">sushw key=selev a=$src_z b=0 j=$nrec &gt; $outputZ</span>
-<a name="l00086"></a>00086 <span class="comment"></span>
-<a name="l00087"></a>00087 <span class="comment">#clean Up</span>
-<a name="l00088"></a>00088 <span class="comment">mv *.H* *.out ela2d_dir </span>
-<a name="l00089"></a>00089 <span class="comment">rm *.tmp *.bin </span>
-<a name="l00090"></a>00090 <span class="comment">echo &quot;Ela2D Finished&quot;</span>
-<a name="l00091"></a>00091 <span class="comment"></span>
-<a name="l00092"></a>00092 <span class="comment">#display</span>
-<a name="l00093"></a>00093 <span class="comment">suxwigb &lt; $outputX title=&quot;X Component&quot; perc=97 style=vsp key=gelev label2=&quot;depth&quot; label1=&quot;twt (s)&quot; &amp;</span>
-<a name="l00094"></a>00094 <span class="comment">suxwigb &lt; $outputZ title=&quot;Z Component&quot; perc=97 style=vsp key=gelev label2=&quot;depth&quot; label1=&quot;twt (s)&quot; &amp;</span>
+<a name="l00073"></a>00073 <span class="comment">#Running Ela2D</span>
+<a name="l00074"></a>00074 <span class="comment">echo &quot;Start Ela2D&quot;</span>
+<a name="l00075"></a>00075 <span class="comment">ela2d</span>
+<a name="l00076"></a>00076 <span class="comment"></span>
+<a name="l00077"></a>00077 <span class="comment">echo &quot;Convert Ela2D output to SU Format&quot;</span>
+<a name="l00078"></a>00078 <span class="comment">dtms=($(echo $dt*1000000 |bc -l))</span>
+<a name="l00079"></a>00079 <span class="comment">suaddhead &lt; seismicX.H@ ns=$ns |</span>
+<a name="l00080"></a>00080 <span class="comment">sushw key=dt a=$dtms |</span>
+<a name="l00081"></a>00081 <span class="comment">sushw key=gx,gelev infile=receiver_list.bin |</span>
+<a name="l00082"></a>00082 <span class="comment">sushw key=sx a=$src_x b=0 j=$nrec |</span>
+<a name="l00083"></a>00083 <span class="comment">sushw key=selev a=$src_z b=0 j=$nrec &gt; $outputX</span>
+<a name="l00084"></a>00084 <span class="comment"></span>
+<a name="l00085"></a>00085 <span class="comment">suaddhead &lt; seismicZ.H@ ns=$ns |</span>
+<a name="l00086"></a>00086 <span class="comment">sushw key=dt a=$dtms |</span>
+<a name="l00087"></a>00087 <span class="comment">sushw key=gx,gelev infile=receiver_list.bin |</span>
+<a name="l00088"></a>00088 <span class="comment">sushw key=sx a=$src_x b=0 j=$nrec  |</span>
+<a name="l00089"></a>00089 <span class="comment">sushw key=selev a=$src_z b=0 j=$nrec &gt; $outputZ</span>
+<a name="l00090"></a>00090 <span class="comment"></span>
+<a name="l00091"></a>00091 <span class="comment">#clean Up</span>
+<a name="l00092"></a>00092 <span class="comment">mv *.H* *.out ela2d_dir </span>
+<a name="l00093"></a>00093 <span class="comment">rm *.tmp *.bin </span>
+<a name="l00094"></a>00094 <span class="comment">echo &quot;Ela2D Finished&quot;</span>
 <a name="l00095"></a>00095 <span class="comment"></span>
+<a name="l00096"></a>00096 <span class="comment">#display</span>
+<a name="l00097"></a>00097 <span class="comment">suxwigb &lt; $outputX title=&quot;X Component&quot; perc=97 style=vsp key=gelev label2=&quot;depth&quot; label1=&quot;twt (s)&quot; &amp;</span>
+<a name="l00098"></a>00098 <span class="comment">suxwigb &lt; $outputZ title=&quot;Z Component&quot; perc=97 style=vsp key=gelev label2=&quot;depth&quot; label1=&quot;twt (s)&quot; &amp;</span>
+<a name="l00099"></a>00099 <span class="comment"></span>
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -175,7 +175,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 1 2012 14:18:30 for Latihan VSP SU by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 2 2012 21:55:53 for Latihan VSP SU by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.5.1
 </small></address>

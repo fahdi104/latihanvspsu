@@ -134,9 +134,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00073"></a>00073 sushw &lt; $output_pef_up_enh infile=tt_header.bin key=delrt | suchw key1=delrt key2=delrt a=$al b=$fac \
 <a name="l00074"></a>00074            | sushift tmin=$tmin tmax=$tmax|suwind tmin=0 tmax=$tmax&gt; $output_pef_up_enh.align
 <a name="l00075"></a>00075 
-<a name="l00076"></a>00076 suwind &lt; $input_up.align tmin=0.4 tmax=1.4 | suxwigb perc=95 title=<span class="stringliteral">&quot;Upgoing Before PEF Decon&quot;</span> key=gelev curve=twt.tmp npair=$nrec,1 curvecolor=red &amp;
-<a name="l00077"></a>00077 suwind &lt; $output_pef_up.align tmin=0.4 tmax=1.4 | suxwigb perc=95 title=<span class="stringliteral">&quot;Upgoing After PEF Decon (minlag:$minlag s, maxlag:$maxlag s)&quot;</span>  key=gelev curve=twt.tmp npair=$nrec,1 curvecolor=red &amp;
-<a name="l00078"></a>00078 suwind &lt; $output_pef_up_enh.align tmin=0.4 tmax=1.4 | suxwigb perc=95 title=<span class="stringliteral">&quot;Enhanced Upgoing After PEF Decon (minlag:$minlag s, maxlag:$maxlag s)&quot;</span>  key=gelev curve=twt.tmp npair=$nrec,1 curvecolor=red &amp;
+<a name="l00076"></a>00076 suwind &lt; $input_up.align tmin=0.4 tmax=1.4 | suxwigb perc=95 title=<span class="stringliteral">&quot;Upgoing Before PEF Decon&quot;</span> key=gelev curve=twt.tmp npair=$nrec,1 curvecolor=red style=vsp key=gelev &amp;
+<a name="l00077"></a>00077 suwind &lt; $output_pef_up.align tmin=0.4 tmax=1.4 | suxwigb perc=95 title=<span class="stringliteral">&quot;Upgoing After PEF Decon (minlag:$minlag s, maxlag:$maxlag s)&quot;</span>  key=gelev curve=twt.tmp npair=$nrec,1 curvecolor=red style=vsp key=gelev  &amp;
+<a name="l00078"></a>00078 suwind &lt; $output_pef_up_enh.align tmin=0.4 tmax=1.4 | suxwigb perc=95 title=<span class="stringliteral">&quot;Enhanced Upgoing After PEF Decon (minlag:$minlag s, maxlag:$maxlag s)&quot;</span>  key=gelev curve=twt.tmp npair=$nrec,1 curvecolor=red  style=vsp key=gelev &amp;
 <a name="l00079"></a>00079 
 <a name="l00080"></a>00080 <span class="preprocessor">#clean up</span>
 <a name="l00081"></a>00081 <span class="preprocessor"></span><span class="preprocessor">#rm *.bin</span>
@@ -160,7 +160,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 1 2012 14:18:31 for Latihan VSP SU by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 2 2012 21:55:54 for Latihan VSP SU by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.5.1
 </small></address>

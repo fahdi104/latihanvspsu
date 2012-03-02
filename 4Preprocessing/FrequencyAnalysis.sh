@@ -22,6 +22,10 @@ suspecfx < $input > $output_fz
 #compute fk
 suspecfk < $input > $output_fk
 
+#display
+nrec=($(wc -l tt-header.txt | awk '{print $1}'))
+suxwigb < $input title=$input perc=97 style=vsp key=gelev curve=tt-header.txt npair=$nrec,1 curvecolor=red label2="Depth" label1="TWT(s)"&
+
 #displayfz
 suximage < $output_fz cmap=hsv2 perc=95 legend=1 title='FZ Spectrum' label1='Freq (Hz)' label2='Level Number' &
 

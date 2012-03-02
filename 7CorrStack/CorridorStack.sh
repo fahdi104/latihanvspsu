@@ -43,13 +43,13 @@ a2b < tfile.outside.tmp n1=$nrec> tfile.outside.bin
 #housekeeping-end
 
 #display corridor window
-suwind < $input_decon_enh_up tmin=0.4 tmax=2.0 | suxwigb perc=95 title="Enhanced Deconvolved Upgoing"  key=gelev curve=$tt.inside,$tt.outside npair=$nrec,$nrec curvecolor=red &
+suwind < $input_decon_enh_up tmin=0.4 tmax=1.6 | suxwigb perc=95 title="Enhanced Deconvolved Upgoing"  key=gelev curve=$tt.inside,$tt.outside npair=$nrec,$nrec curvecolor=red &
 
 #mute, change word, stack
 sumute < $input_decon_enh_up key=gelev nmute=$nrec xfile=xfile.bin tfile=tfile.inside.bin mode=1 \
 	| sustack repeat=12 normpow=1.0 > $output_cstack
 #display	
-suwind <  $output_cstack tmin=0.4 tmax=2.0 \
+suwind <  $output_cstack tmin=0.4 tmax=1.6 \
 	| suxwigb perc=99 xbox=610 wbox=200 label1='TWT (s)' title='Corridor Stack'&
 
 #clean up

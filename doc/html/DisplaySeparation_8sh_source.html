@@ -102,10 +102,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00030"></a>00030 sushw &lt; $output_res infile=tt_header.bin key=delrt | suchw key1=delrt key2=delrt a=0 b=1 | sushift tmin=$tmin tmax=$tmax|suwind tmin=0.4 tmax=1.5&gt; $output_res.tmp
 <a name="l00031"></a>00031 sushw &lt; $output_up infile=tt_header.bin key=delrt | suchw key1=delrt key2=delrt a=0 b=1 | sushift tmin=$tmin tmax=$tmax|suwind tmin=0.4 tmax=1.5&gt; $output_up.tmp
 <a name="l00032"></a>00032 
-<a name="l00033"></a>00033 suxwigb &lt; $input.tmp title=<span class="stringliteral">&quot;Z Component aligned at +200 ms&quot;</span> key=gelev curve=minustt.tmp npair=$nrec,1 curvecolor=red  perc=95 label1=<span class="stringliteral">&quot;depth&quot;</span> label2=<span class="stringliteral">&quot;twt (s)&quot;</span>&amp;
-<a name="l00034"></a>00034 suxwigb &lt; $output_dn.tmp title=<span class="stringliteral">&quot;Downgoing aligned at +200 ms&quot;</span> key=gelev curve=minustt.tmp npair=$nrec,1 curvecolor=red  perc=95 label1=<span class="stringliteral">&quot;depth&quot;</span> label2=<span class="stringliteral">&quot;twt (s)&quot;</span>&amp;
-<a name="l00035"></a>00035 suxwigb &lt; $output_res.tmp title=<span class="stringliteral">&quot;Residual after Downgoing Removal aligned at +TT (TWT)&quot;</span> key=gelev curve=twt.tmp npair=$nrec,1 curvecolor=red  perc=95 label1=<span class="stringliteral">&quot;depth&quot;</span> label2=<span class="stringliteral">&quot;twt (s)&quot;</span>&amp;
-<a name="l00036"></a>00036 suxwigb &lt; $output_up.tmp title=<span class="stringliteral">&quot;Upgoing Wavefield aligned at +TT (TWT)&quot;</span> key=gelev curve=twt.tmp npair=$nrec,1 curvecolor=red perc=95 label1=<span class="stringliteral">&quot;depth&quot;</span> label2=<span class="stringliteral">&quot;twt (s)&quot;</span>&amp;
+<a name="l00033"></a>00033 <span class="preprocessor">#suxwigb &lt; $input.tmp title=&quot;Z Component aligned at +200 ms&quot; key=gelev curve=minustt.tmp npair=$nrec,1 curvecolor=red  perc=92 label2=&quot;depth&quot; label1=&quot;twt (s)&quot; wbox=500 xbox=10 style=vsp key=gelev&amp;</span>
+<a name="l00034"></a>00034 <span class="preprocessor"></span><span class="preprocessor">#suxwigb &lt; $output_dn.tmp title=&quot;Downgoing aligned at +200 ms&quot; key=gelev curve=minustt.tmp npair=$nrec,1 curvecolor=red  perc=92 label2=&quot;depth&quot; label1=&quot;twt (s)&quot; wbox=500 xbox=520 style=vsp key=gelev &amp;</span>
+<a name="l00035"></a>00035 <span class="preprocessor"></span>suxwigb &lt; $output_res.tmp title=<span class="stringliteral">&quot;Residual after Downgoing Removal aligned at +TT (TWT)&quot;</span> key=gelev curve=twt.tmp npair=$nrec,1 curvecolor=red  perc=95 label1=<span class="stringliteral">&quot;depth&quot;</span> label2=<span class="stringliteral">&quot;twt (s)&quot;</span> wbox=500 xbox=10 style=vsp key=gelev&amp; 
+<a name="l00036"></a>00036 suxwigb &lt; $output_up.tmp title=<span class="stringliteral">&quot;Upgoing Wavefield aligned at +TT (TWT)&quot;</span> key=gelev curve=twt.tmp npair=$nrec,1 curvecolor=red perc=95 label1=<span class="stringliteral">&quot;depth&quot;</span> label2=<span class="stringliteral">&quot;twt (s)&quot;</span> wbox=500 xbox=520 style=vsp key=gelev&amp;
 <a name="l00037"></a>00037 
 <a name="l00038"></a>00038 <span class="preprocessor">#clean up</span>
 <a name="l00039"></a>00039 <span class="preprocessor"></span><span class="preprocessor">#rm *.tmp</span>
@@ -128,7 +128,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 1 2012 14:18:31 for Latihan VSP SU by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 2 2012 21:55:53 for Latihan VSP SU by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.5.1
 </small></address>

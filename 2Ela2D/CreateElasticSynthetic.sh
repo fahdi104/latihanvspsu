@@ -13,6 +13,10 @@
 ## * @param dx Model sampling rate in X direction
 ## * @param nz Number of model sample in Z direction
 ## * @param dz Model sampling rate in Z direction
+## * @param outputX Output for horizontal component
+## * @param outputZ Output for vertical component
+## * @param source_listing ASCII file for source listing (filename:source_list.txt, please do not change the filename)
+## * @param receiver_listing ASCII file for receiver listing (filename:receiver_list.txt, please do not change the filename)
 ## */
 
 #input

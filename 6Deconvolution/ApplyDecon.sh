@@ -73,9 +73,9 @@ sushw < $output_pef_up infile=tt_header.bin key=delrt | suchw key1=delrt key2=de
 sushw < $output_pef_up_enh infile=tt_header.bin key=delrt | suchw key1=delrt key2=delrt a=$al b=$fac \
 	| sushift tmin=$tmin tmax=$tmax|suwind tmin=0 tmax=$tmax> $output_pef_up_enh.align
 
-suwind < $input_up.align tmin=0.4 tmax=1.4 | suxwigb perc=95 title="Upgoing Before PEF Decon" key=gelev curve=twt.tmp npair=$nrec,1 curvecolor=red &
-suwind < $output_pef_up.align tmin=0.4 tmax=1.4 | suxwigb perc=95 title="Upgoing After PEF Decon (minlag:$minlag s, maxlag:$maxlag s)"  key=gelev curve=twt.tmp npair=$nrec,1 curvecolor=red &
-suwind < $output_pef_up_enh.align tmin=0.4 tmax=1.4 | suxwigb perc=95 title="Enhanced Upgoing After PEF Decon (minlag:$minlag s, maxlag:$maxlag s)"  key=gelev curve=twt.tmp npair=$nrec,1 curvecolor=red &
+suwind < $input_up.align tmin=0.4 tmax=1.4 | suxwigb perc=95 title="Upgoing Before PEF Decon" key=gelev curve=twt.tmp npair=$nrec,1 curvecolor=red style=vsp key=gelev &
+suwind < $output_pef_up.align tmin=0.4 tmax=1.4 | suxwigb perc=95 title="Upgoing After PEF Decon (minlag:$minlag s, maxlag:$maxlag s)"  key=gelev curve=twt.tmp npair=$nrec,1 curvecolor=red style=vsp key=gelev  &
+suwind < $output_pef_up_enh.align tmin=0.4 tmax=1.4 | suxwigb perc=95 title="Enhanced Upgoing After PEF Decon (minlag:$minlag s, maxlag:$maxlag s)"  key=gelev curve=twt.tmp npair=$nrec,1 curvecolor=red  style=vsp key=gelev &
 
 #clean up
 #rm *.bin
