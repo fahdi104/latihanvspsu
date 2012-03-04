@@ -14,7 +14,7 @@
 ## */
 
 # Input
-input=VSI_007_A_gac_wavefield_z.sgy
+input=VSI_007_A_gac_wavefield_z_resize.sgy
 output=realZ.su
 
 # set parameter
@@ -24,12 +24,13 @@ tmax=4 #output time
 segyread tape=$input verbose=1 endian=0 | suwind tmin=$tmin tmax=$tmax > $output.tmp1
 
 #housekeeping, just to make output SU available for XWIGB
-#this is not a good practice, because I have to strip SEGY headers, will think about this later
-sugethw < $output.tmp1 key=lagb,gelev | sed -e 's/unscale=//' -e 's/gelev=//' -e 's/lagb=//'| sed '/^$/d' > tt-header.tmp
-awk '{ printf "%4f %4d\n", $1/1000, $2/100 }' tt-header.tmp > tt-header.txt
+#this is not a good practice, because I have to *force* gelev to be integer
+sugethw < $output.tmp1 key=lagb,gelev,scalel | sed -e 's/scalel=//' -e 's/gelev=//' -e 's/lagb=//'| sed '/^$/d' > tt-header.tmp
+awk '{ printf "%4f %4d\n", $1/1000, ($2/$3)*-1 }' tt-header.tmp > tt-header.txt
 nrec=($(wc -l tt-header.txt | awk '{print $1}'))
 
 awk '{print $2}' tt-header.txt | a2b n1=$nrec > gelev.bin
+#i dont know whether this necessary or not to strip scalel & scalco
 sushw < $output.tmp1 key=d1,scalel,scalco > $output.tmp2
 sushw < $output.tmp2 key=gelev infile=gelev.bin> $output
 

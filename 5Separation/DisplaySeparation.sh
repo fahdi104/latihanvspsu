@@ -32,8 +32,8 @@ sushw < $output_up infile=tt_header.bin key=delrt | suchw key1=delrt key2=delrt 
 
 #suxwigb < $input.tmp title="Z Component aligned at +200 ms" key=gelev curve=minustt.tmp npair=$nrec,1 curvecolor=red  perc=92 label2="depth" label1="twt (s)" wbox=500 xbox=10 style=vsp key=gelev&
 #suxwigb < $output_dn.tmp title="Downgoing aligned at +200 ms" key=gelev curve=minustt.tmp npair=$nrec,1 curvecolor=red  perc=92 label2="depth" label1="twt (s)" wbox=500 xbox=520 style=vsp key=gelev &
-suxwigb < $output_res.tmp title="Residual after Downgoing Removal aligned at +TT (TWT)" key=gelev curve=twt.tmp npair=$nrec,1 curvecolor=red  perc=95 label1="depth" label2="twt (s)" wbox=500 xbox=10 style=vsp key=gelev& 
-suxwigb < $output_up.tmp title="Upgoing Wavefield aligned at +TT (TWT)" key=gelev curve=twt.tmp npair=$nrec,1 curvecolor=red perc=95 label1="depth" label2="twt (s)" wbox=500 xbox=520 style=vsp key=gelev&
+suxwigb < $output_res.tmp title="Residual after Downgoing Removal aligned at +TT (TWT)" key=gelev curve=twt.tmp npair=$nrec,1 curvecolor=red  perc=95 label1="depth" label2="twt (s)" wbox=500 xbox=10 & 
+suxwigb < $output_up.tmp title="Upgoing Wavefield aligned at +TT (TWT)" key=gelev curve=twt.tmp npair=$nrec,1 curvecolor=red perc=95 label1="depth" label2="twt (s)" wbox=500 xbox=520 &
 
 #clean up
 #rm *.tmp
