@@ -1,11 +1,9 @@
 ## @file README
 ## @todo clean up, update, enhance!
 ## @author fahdi@gm2001.net
-## @date February 2012
+## @date April 2013
 
 DESCRIPTION
-*** Before run, please manually copy the SU file that you want to pick to this directory 
-
 This steps is to perform break time picking which is crucial for every vsp job. 
 
 SU provides good tools but not yet sophisticated and user friendly to do manual break time pick. The script for manual picking using ximage and button [s] functionality is BreakTimePick.sh
@@ -14,11 +12,9 @@ We are going to use automatic break time picking from SU, and smooth it a little
 
 A QC of breaktime picking, besides visual QC, is to compute interval velocity, this will be done on DisplayPicks.sh.
 
-The feature of transit time correction to seismic reference datum (SRD) through cosine correction has not been implemented.
+The feature of transit time correction to seismic reference datum (SRD) through cosine correction is implemented using Suttcor.sh. After the correction the SU data is referenced to SRD.
 
 HOW TO RUN
-*** Before run, please manually copy the SU file that you want to pick to this directory for example copy the Z component file
-$cp ../2Ela2D/Z.su .
 
 - Manual Breaktime Picking
 1. Open BreakTimePick.sh and change the input to what you need
@@ -37,3 +33,6 @@ Run
 1. Open DisplayPicks.sh and change it as necesary to what you need
 $./DisplayPicks.sh
 
+-After finishing break time pick, do geometric correction
+1. Open Suttcor.sh and change it as necesary to what you need
+$./Suttcor.sh

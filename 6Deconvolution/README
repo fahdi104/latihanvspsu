@@ -4,18 +4,12 @@
 ## @date February 2012
 
 DESCRIPTION
-*** Before run, please manually copy the SU file that you want to process to this directory 
 Deconvolution is needed to remove multiple. In VSP, we can design the decon operator based on downgoing wavefield. The reverberation of multiple was recorded on downgoing wavefield. 
 
 Within SU, we can try to use predictive decon (supef/PEF). Using downgoing wavefield autocorrelation, we estimated the multiple lag, and gap. 
 After we satisfied with the parameter for downgoing wavefield, we applied to upgoing wavefield.
 
 HOW TO RUN
-*** Before run, please manually copy the SU file that you want to process to this directory 
-$cp ../5Separation/velf_up.su .
-$cp ../5Separation/velf_down.su .
-$cp ../0ImportSEGY/tt-header.txt .
-
 1. Start with CheckAutoCorrelation.sh
 	- Open the file
 	- set necessary input: here for checking autocorrelation we use downgoing wavefield
@@ -31,7 +25,7 @@ $./CheckAutoCorrelation.sh
 	- update minlag and maxlag with optimum number that you get from downgoing estimation
 	
 4. Run
-./ApplyDecon.sh	
+./ApplyPEFDecon.sh	
 
 5. QC your result
 

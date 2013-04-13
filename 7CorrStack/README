@@ -4,17 +4,13 @@
 ## @date February 2012
 
 DESCRIPTION
-*** Before run, please manually copy the SU file that you want to process to this directory 
 The final process for Zero Offset VSP processing is creating corridor stack, that representing the 1-D seismic response in the borehole. This is done by taking a short window around transit time, and stack it. 
 
-The corridor window dont be too short, because it may not captured the amplitude variation, but also not too long, because we can include multiple in the stacking process. 
+The corridor window don't be too short, because it may not captured the amplitude variation, but also not too long, because we can include multiple in the stacking process. 
 
 For reflection below TD, we include number of traces (defined by except_last_trace) to be stack for all window
 
 HOW TO RUN
-*** Before run, please manually copy the SU file that you want to process to this directory 
-$cp ../5Separation/pef_up_enh.su.align .
-$cp ../0ImportSEGY/tt-header.txt .
 
 1. Open CorridorStack.sh, edit the file as necessary especially the corridor and except_last_trace
 2. Run

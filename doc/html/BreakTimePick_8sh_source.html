@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Latihan VSP SU: 3BreakTimePick/BreakTimePick.sh Source File</title>
+<title>Latihan VSP SU: F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/BreakTimePick.sh Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -73,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 <div class="header">
   <div class="headertitle">
-<div class="title">3BreakTimePick/BreakTimePick.sh</div>  </div>
+<div class="title">F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/BreakTimePick.sh</div>  </div>
 </div>
 <div class="contents">
 <a href="BreakTimePick_8sh.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#!/bin/bash</span>
@@ -90,10 +90,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00021"></a>00021 nrec=($(wc -l $output_picks | awk <span class="stringliteral">&#39;{print $1}&#39;</span>)) #calculate number of receiver
 <a name="l00022"></a>00022 
 <a name="l00023"></a>00023 <span class="preprocessor">#display</span>
-<a name="l00024"></a>00024 <span class="preprocessor"></span>suxwigb &lt; $input title=<span class="stringliteral">&quot;Z Component&quot;</span> perc=97 style=vsp key=gelev curve=$output_picks npair=$nrec curvecolor=red &amp;
+<a name="l00024"></a>00024 <span class="preprocessor"></span>suxwigb &lt; $input title=<span class="stringliteral">&quot;Z Component&quot;</span> perc=98.5 style=vsp key=gelev curve=$output_picks npair=$nrec curvecolor=red &amp;
 <a name="l00025"></a>00025 
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027 
+<a name="l00026"></a>00026 <span class="preprocessor">#clean up</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span>rm *.tmp
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -113,7 +115,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 2 2012 21:55:53 for Latihan VSP SU by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 13 2013 17:03:38 for Latihan VSP SU by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.5.1
 </small></address>

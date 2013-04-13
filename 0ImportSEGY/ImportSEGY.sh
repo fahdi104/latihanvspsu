@@ -5,40 +5,43 @@
 ## * @brief Clean.sh can be used to clean up 
 ## * @file ImportSEGY.sh
 ## * @author fahdi@gm2001.net
-## * @date February 2012
+## * @date April 2013 [update]
+## * @todo ouput ascii geometry, consistent filenaming
 ## * @param input Specify your input SEGY file
 ## * @param output Specify your output SU file
 ## * @param tmin Minimum Output time
 ## * @param tmax Maximum Output time
-## * @todo incorporate scalel for gelev recomputation
 ## */
 
 # Input
-input=VSI_007_A_gac_wavefield_z_resize.sgy
+input=realZ.segy
 output=realZ.su
 
 # set parameter
 tmin=0 #start time
 tmax=4 #output time
 
-segyread tape=$input verbose=1 endian=0 | suwind tmin=$tmin tmax=$tmax > $output.tmp1
+segyread tape=$input verbose=1 endian=0 | segyclean > $output.tmp
 
 #housekeeping, just to make output SU available for XWIGB
-#this is not a good practice, because I have to *force* gelev to be integer
-sugethw < $output.tmp1 key=lagb,gelev,scalel | sed -e 's/scalel=//' -e 's/gelev=//' -e 's/lagb=//'| sed '/^$/d' > tt-header.tmp
-awk '{ printf "%4f %4d\n", $1/1000, ($2/$3)*-1 }' tt-header.tmp > tt-header.txt
+#get geometry to ascii
+sugethw < $output.tmp key=lagb,gelev,scalel \
+	| sed -e 's/scalel=//' -e 's/gelev=//' -e 's/lagb=//'| sed '/^$/d' > tt-header.tmp
+awk '{ printf "%4f %2f\n", $1/1000, ($2/$3)*-1 }' tt-header.tmp > tt-header.txt
 nrec=($(wc -l tt-header.txt | awk '{print $1}'))
 
-awk '{print $2}' tt-header.txt | a2b n1=$nrec > gelev.bin
-#i dont know whether this necessary or not to strip scalel & scalco
-sushw < $output.tmp1 key=d1,scalel,scalco > $output.tmp2
-sushw < $output.tmp2 key=gelev infile=gelev.bin> $output
+#I don't know what's the correct convention for scalel & scalco?
+#I recomputed gelev to be 1 decimal and reset scalel acordingly
+#furthermore scalel and scalco will be treated differently
+awk '{print $2*10}' tt-header.txt | a2b n1=$nrec > gelev.bin
+sushw < $output.tmp key=gelev infile=gelev.bin> $output.tmp2
+sushw < $output.tmp2 key=scalel a=-1> $output
 
 #display
 nrec=($(wc -l tt-header.txt | awk '{print $1}'))
-
-suxwigb < $output title=$input perc=97 style=vsp key=gelev curve=tt-header.txt npair=$nrec,1 curvecolor=red &
+suxwigb < $output title=$input perc=99 style=vsp key=gelev curve=tt-header.txt npair=$nrec,1 curvecolor=red &
 
 #clean up
 rm *.tmp*
 rm *.bin
+

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Latihan VSP SU: 3BreakTimePick/DisplayPicks.sh Source File</title>
+<title>Latihan VSP SU: F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/DisplayPicks.sh Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -73,28 +73,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 <div class="header">
   <div class="headertitle">
-<div class="title">3BreakTimePick/DisplayPicks.sh</div>  </div>
+<div class="title">F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/DisplayPicks.sh</div>  </div>
 </div>
 <div class="contents">
 <a href="DisplayPicks_8sh.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#!/bin/bash</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span>
-<a name="l00016"></a>00016 <span class="preprocessor">#input</span>
-<a name="l00017"></a>00017 <span class="preprocessor"></span>input=Z.su
-<a name="l00018"></a>00018 input_tt=tt_picks_auto_smooth.txt 
-<a name="l00019"></a>00019 output_tt=tt_picks_correctionToSRD.txt
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 
-<a name="l00022"></a>00022 <span class="preprocessor">#dipslay pick</span>
-<a name="l00023"></a>00023 <span class="preprocessor"></span>nrec=($(wc -l $input_tt | awk <span class="stringliteral">&#39;{print $1}&#39;</span>))
-<a name="l00024"></a>00024 suxwigb &lt; $input title=<span class="stringliteral">&quot;Z Component&quot;</span> perc=97 style=vsp key=gelev curve=$input_tt npair=$nrec,1 curvecolor=red &amp;
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026 <span class="preprocessor">#display TD</span>
-<a name="l00027"></a>00027 <span class="preprocessor"></span><span class="preprocessor">#TODO: reverse pick</span>
-<a name="l00028"></a>00028 <span class="preprocessor"></span>
-<a name="l00029"></a>00029 <span class="preprocessor">#calculate interval velocity</span>
-<a name="l00030"></a>00030 <span class="preprocessor"></span>octave --silent --eval <span class="stringliteral">&quot;ttCorrection(&#39;$input_tt&#39;,&#39;$output_tt&#39;)&quot;</span>
-<a name="l00031"></a>00031 xgraph $input_tt &amp;
-<a name="l00032"></a>00032 xgraph $output_tt &amp;
+<a name="l00014"></a>00014 <span class="preprocessor">#input</span>
+<a name="l00015"></a>00015 <span class="preprocessor"></span>input=Z.su
+<a name="l00016"></a>00016 input_tt=tt_picks_auto_smooth.txt 
+<a name="l00017"></a>00017 output_tt=tt_picks_correctionToSRD.txt
+<a name="l00018"></a>00018 
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020 <span class="preprocessor">#dipslay pick</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span>nrec=($(wc -l $input_tt | awk <span class="stringliteral">&#39;{print $1}&#39;</span>))
+<a name="l00022"></a>00022 suxwigb &lt; $input title=<span class="stringliteral">&quot;Z Component&quot;</span> perc=97 style=vsp key=gelev curve=$input_tt npair=$nrec,1 curvecolor=red &amp;
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024 <span class="preprocessor">#display TD</span>
+<a name="l00025"></a>00025 <span class="preprocessor"></span><span class="preprocessor">#TODO: reverse pick</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span>
+<a name="l00027"></a>00027 <span class="preprocessor">#calculate interval velocity</span>
+<a name="l00028"></a>00028 <span class="preprocessor"></span>octave --silent --eval <span class="stringliteral">&quot;ttCorrection(&#39;$input_tt&#39;,&#39;$output_tt&#39;)&quot;</span>
+<a name="l00029"></a>00029 xgraph $input_tt &amp;
+<a name="l00030"></a>00030 xgraph $output_tt &amp;
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 2 2012 21:55:53 for Latihan VSP SU by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 13 2013 17:03:38 for Latihan VSP SU by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.5.1
 </small></address>

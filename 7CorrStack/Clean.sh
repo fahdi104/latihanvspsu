@@ -2,8 +2,10 @@
 ## @file Clean.sh
 ## @brief remove output of Corridor Stack exercise
 ## @author fahdi@gm2001.net
-## @date February 2012
+## @date April 2013 [update]
 
 rm *.txt*
-rm *.su*
+rm *.tmp
 rm *.bin*
+rm *.t*
+rm ../data/*.tmp

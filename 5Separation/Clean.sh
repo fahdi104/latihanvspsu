@@ -1,10 +1,10 @@
 #!/bin/bash
 ## @file Clean.sh
-## @brief remove output of Flat Modeling exercise
+## @brief remove output of separation exercise
 ## @author fahdi@gm2001.net
-## @date February 2012
+## @date April 2013 [update]
 
-rm *.su
 rm *.bin
 rm *.txt
 rm *.tmp
+rm ../data/*.tmp

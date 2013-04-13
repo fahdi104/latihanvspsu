@@ -6,7 +6,7 @@ function ttSmoothing(inputFile)
 
 input=load(inputFile);
 fileName=split(inputFile,'.');
-outputFile=strcat(fileName(1,:),'_smooth.txt');
+outputFile=strcat(fileName(1,:),'_smooth');
 tt=input(:,1);
 depth=input(:,2);
 %ttsmooth=filter(ones(1,5)/10, 1, tt);

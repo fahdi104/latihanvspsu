@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Latihan VSP SU: 5Separation/DisplaySeparation.sh Source File</title>
+<title>Latihan VSP SU: F:/apps/cygwin/home/fahdi/suvsp/5Separation/DisplaySeparation.sh Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -73,42 +73,59 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 <div class="header">
   <div class="headertitle">
-<div class="title">5Separation/DisplaySeparation.sh</div>  </div>
+<div class="title">F:/apps/cygwin/home/fahdi/suvsp/5Separation/DisplaySeparation.sh</div>  </div>
 </div>
 <div class="contents">
 <a href="DisplaySeparation_8sh.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#!/bin/bash</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span>
 <a name="l00009"></a>00009 <span class="preprocessor">#input</span>
-<a name="l00010"></a>00010 <span class="preprocessor"></span>input=Z_prepro.su
-<a name="l00011"></a>00011 output_dn=velf_dn.su
-<a name="l00012"></a>00012 output_res=velf_res.su
-<a name="l00013"></a>00013 output_up=velf_up.su
-<a name="l00014"></a>00014 output_res2=velf_res2.su
-<a name="l00015"></a>00015 timePicks=tt-header.txt
-<a name="l00016"></a>00016 
-<a name="l00017"></a>00017 <span class="preprocessor"># a little house keeping</span>
-<a name="l00018"></a>00018 <span class="preprocessor"></span>nrec=($(wc -l $timePicks | awk <span class="stringliteral">&#39;{print $1}&#39;</span>)) #housekeeping, check number of receiver
-<a name="l00019"></a>00019 awk <span class="stringliteral">&#39;{print $1*1000}&#39;</span> $timePicks &gt; tt.tmp 
-<a name="l00020"></a>00020 a2b &lt;tt.tmp &gt; tt_header.bin
-<a name="l00021"></a>00021 awk <span class="stringliteral">&#39;{print $1*0+0.200,$2}&#39;</span> $timePicks &gt; minustt.tmp
-<a name="l00022"></a>00022 awk <span class="stringliteral">&#39;{print $1*2,$2}&#39;</span> $timePicks &gt; twt.tmp
+<a name="l00010"></a>00010 <span class="preprocessor"></span>input=../data/Z_prepro.su
+<a name="l00011"></a>00011 output_dn=../data/velf_dn.su
+<a name="l00012"></a>00012 output_res=../data/velf_res.su
+<a name="l00013"></a>00013 output_up=../data/velf_up.su
+<a name="l00014"></a>00014 output_res2=../data/velf_res2.su
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 <span class="preprocessor">#get tt pick from header</span>
+<a name="l00017"></a>00017 <span class="preprocessor"></span><span class="preprocessor">#tt_picks=../data/tt_picks_auto.txt</span>
+<a name="l00018"></a>00018 <span class="preprocessor"></span><span class="preprocessor">#gettime pick from header</span>
+<a name="l00019"></a>00019 <span class="preprocessor"></span>sugethw &lt; $input key=lagb,gelev,scalel,tracr | sed -e <span class="stringliteral">&#39;s/scalel=//&#39;</span> -e <span class="stringliteral">&#39;s/gelev=//&#39;</span> -e <span class="stringliteral">&#39;s/lagb=//&#39;</span> -e <span class="stringliteral">&#39;s/tracr=//&#39;</span>\ \
+<a name="l00020"></a>00020            | sed <span class="stringliteral">&#39;/^$/d&#39;</span> &gt; tt-header.tmp
+<a name="l00021"></a>00021 awk <span class="stringliteral">&#39;{ printf &quot;%4f %2f\n&quot;, $1/1000, ($2/(10^($3*-1))) }&#39;</span> tt-header.tmp &gt; tt-header.txt
+<a name="l00022"></a>00022 tt_picks=tt-header.txt
 <a name="l00023"></a>00023 
-<a name="l00024"></a>00024 <span class="preprocessor">#TT alignment</span>
-<a name="l00025"></a>00025 <span class="preprocessor"></span>tmin=0
-<a name="l00026"></a>00026 tmax=5
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028 sushw &lt; $input infile=tt_header.bin key=delrt | suchw key1=delrt key2=delrt a=200 b=-1 | sushift tmin=$tmin tmax=$tmax|suwind tmin=0.0 tmax=1.0&gt; $input.tmp
-<a name="l00029"></a>00029 sushw &lt; $output_dn infile=tt_header.bin key=delrt | suchw key1=delrt key2=delrt a=200 b=-1 | sushift tmin=$tmin tmax=$tmax|suwind tmin=0.0 tmax=1.0&gt; $output_dn.tmp
-<a name="l00030"></a>00030 sushw &lt; $output_res infile=tt_header.bin key=delrt | suchw key1=delrt key2=delrt a=0 b=1 | sushift tmin=$tmin tmax=$tmax|suwind tmin=0.4 tmax=1.5&gt; $output_res.tmp
-<a name="l00031"></a>00031 sushw &lt; $output_up infile=tt_header.bin key=delrt | suchw key1=delrt key2=delrt a=0 b=1 | sushift tmin=$tmin tmax=$tmax|suwind tmin=0.4 tmax=1.5&gt; $output_up.tmp
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033 <span class="preprocessor">#suxwigb &lt; $input.tmp title=&quot;Z Component aligned at +200 ms&quot; key=gelev curve=minustt.tmp npair=$nrec,1 curvecolor=red  perc=92 label2=&quot;depth&quot; label1=&quot;twt (s)&quot; wbox=500 xbox=10 style=vsp key=gelev&amp;</span>
-<a name="l00034"></a>00034 <span class="preprocessor"></span><span class="preprocessor">#suxwigb &lt; $output_dn.tmp title=&quot;Downgoing aligned at +200 ms&quot; key=gelev curve=minustt.tmp npair=$nrec,1 curvecolor=red  perc=92 label2=&quot;depth&quot; label1=&quot;twt (s)&quot; wbox=500 xbox=520 style=vsp key=gelev &amp;</span>
-<a name="l00035"></a>00035 <span class="preprocessor"></span>suxwigb &lt; $output_res.tmp title=<span class="stringliteral">&quot;Residual after Downgoing Removal aligned at +TT (TWT)&quot;</span> key=gelev curve=twt.tmp npair=$nrec,1 curvecolor=red  perc=95 label1=<span class="stringliteral">&quot;depth&quot;</span> label2=<span class="stringliteral">&quot;twt (s)&quot;</span> wbox=500 xbox=10 style=vsp key=gelev&amp; 
-<a name="l00036"></a>00036 suxwigb &lt; $output_up.tmp title=<span class="stringliteral">&quot;Upgoing Wavefield aligned at +TT (TWT)&quot;</span> key=gelev curve=twt.tmp npair=$nrec,1 curvecolor=red perc=95 label1=<span class="stringliteral">&quot;depth&quot;</span> label2=<span class="stringliteral">&quot;twt (s)&quot;</span> wbox=500 xbox=520 style=vsp key=gelev&amp;
-<a name="l00037"></a>00037 
-<a name="l00038"></a>00038 <span class="preprocessor">#clean up</span>
-<a name="l00039"></a>00039 <span class="preprocessor"></span><span class="preprocessor">#rm *.tmp</span>
+<a name="l00024"></a>00024 <span class="preprocessor"># a little house keeping</span>
+<a name="l00025"></a>00025 <span class="preprocessor"></span>nrec=($(wc -l $tt_picks | awk <span class="stringliteral">&#39;{print $1}&#39;</span>))
+<a name="l00026"></a>00026 awk <span class="stringliteral">&#39;{print $1*1000}&#39;</span> $tt_picks &gt; tt.tmp 
+<a name="l00027"></a>00027 a2b &lt;tt.tmp n1=$nrec&gt; tt_header.bin
+<a name="l00028"></a>00028 awk <span class="stringliteral">&#39;{print $1*0+0.200,$2}&#39;</span> $tt_picks &gt; minustt.tmp
+<a name="l00029"></a>00029 awk <span class="stringliteral">&#39;{print $1*2,$2}&#39;</span> $tt_picks &gt; twt.tmp
+<a name="l00030"></a>00030 a2b &lt; twt.tmp n1=$nrec&gt; twt.bin
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 <span class="preprocessor">#TT alignment</span>
+<a name="l00033"></a>00033 <span class="preprocessor"></span>tmin=0
+<a name="l00034"></a>00034 tmax=8
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036 sushw &lt; $input infile=tt_header.bin key=delrt \
+<a name="l00037"></a>00037            | suchw key1=delrt key2=delrt a=200 b=-1 \
+<a name="l00038"></a>00038            | sushift tmin=$tmin tmax=$tmax|suwind tmin=0.0 tmax=1.0&gt; $input.tmp
+<a name="l00039"></a>00039 sushw &lt; $output_dn infile=tt_header.bin key=delrt \
+<a name="l00040"></a>00040            | suchw key1=delrt key2=delrt a=200 b=-1 | sushift tmin=$tmin tmax=$tmax|suwind tmin=0.0 tmax=1.0&gt; $output_dn.tmp
+<a name="l00041"></a>00041 sushw &lt; $output_res infile=tt_header.bin key=delrt \
+<a name="l00042"></a>00042            | sushift tmin=$tmin tmax=$tmax|suwind tmin=0.0 tmax=2 &gt; $output_res.tmp
+<a name="l00043"></a>00043 sushw &lt; $output_up infile=tt_header.bin key=delrt  \
+<a name="l00044"></a>00044            | sushift tmin=$tmin tmax=$tmax|suwind tmin=0.0 tmax=2 &gt; $output_up.tmp
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046 suxwigb &lt; $input.tmp title=<span class="stringliteral">&quot;Z Component aligned at +200 ms&quot;</span> key=gelev \
+<a name="l00047"></a>00047            curve=minustt.tmp npair=$nrec,1 curvecolor=red  perc=92 label2=<span class="stringliteral">&quot;depth&quot;</span> label1=<span class="stringliteral">&quot;twt (s)&quot;</span> wbox=500 xbox=10 style=vsp key=gelev&amp;
+<a name="l00048"></a>00048 suxwigb &lt; $output_dn.tmp title=<span class="stringliteral">&quot;Downgoing aligned at +200 ms&quot;</span> key=gelev \
+<a name="l00049"></a>00049            curve=minustt.tmp npair=$nrec,1 curvecolor=red  perc=92 label2=<span class="stringliteral">&quot;depth&quot;</span> label1=<span class="stringliteral">&quot;twt (s)&quot;</span> wbox=500 xbox=520 style=vsp key=gelev &amp;
+<a name="l00050"></a>00050 suxwigb &lt; $output_res.tmp title=<span class="stringliteral">&quot;Residual after Downgoing Removal aligned at +TT (TWT)&quot;</span> key=gelev \
+<a name="l00051"></a>00051            curve=twt.tmp npair=$nrec,1 curvecolor=red  perc=99 label1=<span class="stringliteral">&quot;twt (s)&quot;</span> label2=<span class="stringliteral">&quot;depth&quot;</span> wbox=500 xbox=10 &amp; 
+<a name="l00052"></a>00052 suxwigb &lt; $output_up.tmp title=<span class="stringliteral">&quot;Upgoing Wavefield aligned at +TT (TWT)&quot;</span> key=gelev \
+<a name="l00053"></a>00053            curve=twt.tmp npair=$nrec,1 curvecolor=red perc=99 label1=<span class="stringliteral">&quot;twt (s)&quot;</span> label2=<span class="stringliteral">&quot;depth&quot;</span> wbox=500 xbox=520 &amp;
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055 <span class="preprocessor">#clean up</span>
+<a name="l00056"></a>00056 <span class="preprocessor"></span><span class="preprocessor">#rm *.tmp</span>
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -128,7 +145,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 2 2012 21:55:53 for Latihan VSP SU by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 13 2013 17:03:39 for Latihan VSP SU by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.5.1
 </small></address>

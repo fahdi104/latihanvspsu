@@ -4,7 +4,7 @@
 ## * @file BreakTimePick.sh
 ## * @brief Manually break time picking, using ximage picking utility
 ## * @author fahdi@gm2001.net
-## * @date February 2012
+## * @date April 2013 [update]
 ## * @param input SU file to be picked
 ## * @param output_picks ASCII file for automatic Transit Time pick result
 ## */
@@ -21,6 +21,8 @@ mv tt_picks.tmp $output_picks
 nrec=($(wc -l $output_picks | awk '{print $1}')) #calculate number of receiver
 
 #display
-suxwigb < $input title="Z Component" perc=97 style=vsp key=gelev curve=$output_picks npair=$nrec curvecolor=red &
+suxwigb < $input title="Z Component" perc=98.5 style=vsp key=gelev curve=$output_picks npair=$nrec curvecolor=red &
 
+#clean up
+rm *.tmp
 

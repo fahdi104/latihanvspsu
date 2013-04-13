@@ -2,7 +2,7 @@
 ## @file Clean.sh
 ## @brief remove output of Flat Modeling exercise
 ## @author fahdi@gm2001.net
-## @date February 2012
+## @date April 2013 [update]
 
 rm *.dat
 rm *.txt

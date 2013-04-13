@@ -1,6 +1,1 @@
-0. repick z naylor
-1. Interval velocity calc, RMS velocity calc
-2. FZ & FK Spec
-3. Decon
-
-@TODO implemet move all data to /data folder 
+- Waveshaping Decovolution 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Latihan VSP SU: 7CorrStack/CorridorStack.sh Source File</title>
+<title>Latihan VSP SU: F:/apps/cygwin/home/fahdi/suvsp/7CorrStack/CorridorStack.sh Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -73,55 +73,65 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 <div class="header">
   <div class="headertitle">
-<div class="title">7CorrStack/CorridorStack.sh</div>  </div>
+<div class="title">F:/apps/cygwin/home/fahdi/suvsp/7CorrStack/CorridorStack.sh</div>  </div>
 </div>
 <div class="contents">
 <a href="CorridorStack_8sh.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#!/bin/bash</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span>
-<a name="l00014"></a>00014 <span class="preprocessor">#input</span>
-<a name="l00015"></a>00015 <span class="preprocessor"></span>input_decon_enh_up=pef_up_enh.su.align
-<a name="l00016"></a>00016 output_cstack=corr_stack.su
-<a name="l00017"></a>00017 tt=tt-header.txt
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019 <span class="preprocessor">#set parameter</span>
-<a name="l00020"></a>00020 <span class="preprocessor"></span>corridor=0.08 #s
-<a name="l00021"></a>00021 except_last_trace=5;
+<a name="l00012"></a>00012 <span class="preprocessor">#input</span>
+<a name="l00013"></a>00013 <span class="preprocessor"></span>input_decon_enh_up=../data/pef_up_enh.su.align
+<a name="l00014"></a>00014 output_cstack=../data/corr_stack.su
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 <span class="preprocessor">#set parameter</span>
+<a name="l00017"></a>00017 <span class="preprocessor"></span>corridor=0.08 #s
+<a name="l00018"></a>00018 except_last_trace=5;
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020 tmin=0
+<a name="l00021"></a>00021 tmax=4
 <a name="l00022"></a>00022 
-<a name="l00023"></a>00023 <span class="preprocessor">#housekeeping</span>
-<a name="l00024"></a>00024 <span class="preprocessor"></span>nrec=($(wc -l $tt | awk <span class="stringliteral">&#39;{print $1}&#39;</span>)) #housekeeping
-<a name="l00025"></a>00025 last_rec=$(($nrec - $except_last_trace))
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027 awk -v corridor=$corridor -v last_rec=$last_rec \
-<a name="l00028"></a>00028            <span class="stringliteral">&#39;BEGIN {i=1}{if (i&lt;=last_rec){print (($1*2)+corridor), $2} else {print 9,$2} i++}&#39;</span> $tt \
-<a name="l00029"></a>00029            | awk <span class="stringliteral">&#39;{ printf &quot;%4f %d\n&quot;, $1, $2 }&#39;</span> &gt; $tt.inside 
-<a name="l00030"></a>00030 
-<a name="l00031"></a>00031 awk <span class="stringliteral">&#39;{ printf &quot;%4f %d\n&quot;, $1*2, $2 }&#39;</span> $tt &gt; $tt.outside
+<a name="l00023"></a>00023 <span class="preprocessor">#gettime pick from header</span>
+<a name="l00024"></a>00024 <span class="preprocessor"></span>sugethw &lt; $input_decon_enh_up key=lagb,gelev,scalel,tracr \
+<a name="l00025"></a>00025            | sed -e <span class="stringliteral">&#39;s/scalel=//&#39;</span> -e <span class="stringliteral">&#39;s/gelev=//&#39;</span> -e <span class="stringliteral">&#39;s/lagb=//&#39;</span> -e <span class="stringliteral">&#39;s/tracr=//&#39;</span>| sed <span class="stringliteral">&#39;/^$/d&#39;</span> &gt; tt-header.tmp
+<a name="l00026"></a>00026 awk <span class="stringliteral">&#39;{ printf &quot;%4f %2f\n&quot;, $1/1000, ($2/(10^($3*-1))) }&#39;</span> tt-header.tmp &gt; tt-header.txt
+<a name="l00027"></a>00027 tt_picks=tt-header.txt
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="preprocessor">#housekeeping</span>
+<a name="l00030"></a>00030 <span class="preprocessor"></span>nrec=($(wc -l $tt_picks | awk <span class="stringliteral">&#39;{print $1}&#39;</span>)) #housekeeping
+<a name="l00031"></a>00031 last_rec=$(($nrec - $except_last_trace))
 <a name="l00032"></a>00032 
-<a name="l00033"></a>00033 <span class="preprocessor">#apply enhancement to pef up</span>
-<a name="l00034"></a>00034 <span class="preprocessor"></span>awk <span class="stringliteral">&#39;{print $2}&#39;</span> $tt &gt; xfile.tmp
-<a name="l00035"></a>00035 a2b &lt; xfile.tmp n1=$nrec&gt; xfile.bin
+<a name="l00033"></a>00033 awk -v corridor=$corridor -v last_rec=$last_rec \
+<a name="l00034"></a>00034            <span class="stringliteral">&#39;BEGIN {i=1}{if (i&lt;=last_rec){print (($1*2)+corridor), $2} else {print 9,$2} i++}&#39;</span> $tt_picks \
+<a name="l00035"></a>00035            | awk <span class="stringliteral">&#39;{ printf &quot;%4f %d\n&quot;, $1, $2 }&#39;</span> &gt; $tt_picks.inside 
 <a name="l00036"></a>00036 
-<a name="l00037"></a>00037 awk <span class="stringliteral">&#39;{print $1}&#39;</span> $tt.inside &gt; tfile.inside.tmp
-<a name="l00038"></a>00038 a2b &lt; tfile.inside.tmp n1=$nrec&gt; tfile.inside.bin
-<a name="l00039"></a>00039 
-<a name="l00040"></a>00040 awk <span class="stringliteral">&#39;{print $1}&#39;</span> $tt.outside &gt; tfile.outside.tmp
-<a name="l00041"></a>00041 a2b &lt; tfile.outside.tmp n1=$nrec&gt; tfile.outside.bin
+<a name="l00037"></a>00037 awk <span class="stringliteral">&#39;{ printf &quot;%4f %d\n&quot;, $1*2, $2 }&#39;</span> $tt_picks &gt; $tt_picks.outside
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039 <span class="preprocessor">#apply enhancement to pef up</span>
+<a name="l00040"></a>00040 <span class="preprocessor"></span>awk <span class="stringliteral">&#39;{print $4}&#39;</span> tt-header.tmp &gt; xfile.tmp
+<a name="l00041"></a>00041 a2b &lt; xfile.tmp n1=$nrec&gt; xfile.bin
 <a name="l00042"></a>00042 
-<a name="l00043"></a>00043 <span class="preprocessor">#housekeeping-end</span>
-<a name="l00044"></a>00044 <span class="preprocessor"></span>
-<a name="l00045"></a>00045 <span class="preprocessor">#display corridor window</span>
-<a name="l00046"></a>00046 <span class="preprocessor"></span>suwind &lt; $input_decon_enh_up tmin=0.4 tmax=1.6 | suxwigb perc=95 title=<span class="stringliteral">&quot;Enhanced Deconvolved Upgoing&quot;</span>  key=gelev curve=$tt.inside,$tt.outside npair=$nrec,$nrec curvecolor=red &amp;
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048 <span class="preprocessor">#mute, change word, stack</span>
-<a name="l00049"></a>00049 <span class="preprocessor"></span>sumute &lt; $input_decon_enh_up key=gelev nmute=$nrec xfile=xfile.bin tfile=tfile.inside.bin mode=1 \
-<a name="l00050"></a>00050            | sustack repeat=12 normpow=1.0 &gt; $output_cstack
-<a name="l00051"></a>00051 <span class="preprocessor">#display   </span>
-<a name="l00052"></a>00052 <span class="preprocessor"></span>suwind &lt;  $output_cstack tmin=0.4 tmax=1.6 \
-<a name="l00053"></a>00053            | suxwigb perc=99 xbox=610 wbox=200 label1=<span class="stringliteral">&#39;TWT (s)&#39;</span> title=<span class="stringliteral">&#39;Corridor Stack&#39;</span>&amp;
+<a name="l00043"></a>00043 awk <span class="stringliteral">&#39;{print $1}&#39;</span> $tt_picks.inside &gt; tfile.inside.tmp
+<a name="l00044"></a>00044 a2b &lt; tfile.inside.tmp n1=$nrec&gt; tfile.inside.bin
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046 awk <span class="stringliteral">&#39;{print $1}&#39;</span> $tt_picks.outside &gt; tfile.outside.tmp
+<a name="l00047"></a>00047 a2b &lt; tfile.outside.tmp n1=$nrec&gt; tfile.outside.bin
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049 <span class="preprocessor">#display corridor window</span>
+<a name="l00050"></a>00050 <span class="preprocessor"></span>sumute &lt; $input_decon_enh_up key=tracr nmute=$nrec xfile=xfile.bin tfile=tfile.outside.bin mode=0 \
+<a name="l00051"></a>00051            | suwind tmin=$tmin tmax=$tmax \
+<a name="l00052"></a>00052            | suxwigb perc=99.9 title=<span class="stringliteral">&quot;Enhanced Deconvolved Upgoing&quot;</span>  key=gelev \
+<a name="l00053"></a>00053            curve=$tt_picks.inside,$tt_picks.outside npair=$nrec,$nrec curvecolor=red label1=<span class="stringliteral">&#39;TWT (s)&#39;</span> label2=<span class="stringliteral">&#39;depth&#39;</span>&amp;
 <a name="l00054"></a>00054 
-<a name="l00055"></a>00055 <span class="preprocessor">#clean up</span>
-<a name="l00056"></a>00056 <span class="preprocessor"></span>rm *.tmp
-<a name="l00057"></a>00057 
+<a name="l00055"></a>00055 <span class="preprocessor">#mute, change word, stack</span>
+<a name="l00056"></a>00056 <span class="preprocessor"></span>sumute &lt; $input_decon_enh_up key=tracr nmute=$nrec xfile=xfile.bin tfile=tfile.outside.bin mode=0 \
+<a name="l00057"></a>00057            | sumute  key=tracr nmute=$nrec xfile=xfile.bin tfile=tfile.inside.bin mode=1 \
+<a name="l00058"></a>00058            | sustack repeat=12 normpow=1.0 &gt; $output_cstack
+<a name="l00059"></a>00059 <span class="preprocessor">#display   </span>
+<a name="l00060"></a>00060 <span class="preprocessor"></span>suwind &lt;  $output_cstack tmin=$tmin tmax=$tmax \
+<a name="l00061"></a>00061            | suxwigb perc=99.9 xbox=610 wbox=200 label1=<span class="stringliteral">&#39;TWT (s)&#39;</span> title=<span class="stringliteral">&#39;Corridor Stack&#39;</span>&amp;
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063 <span class="preprocessor">#clean up</span>
+<a name="l00064"></a>00064 <span class="preprocessor"></span><span class="preprocessor">#rm *.tmp</span>
+<a name="l00065"></a>00065 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -141,7 +151,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 2 2012 21:55:54 for Latihan VSP SU by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 13 2013 17:03:39 for Latihan VSP SU by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.5.1
 </small></address>

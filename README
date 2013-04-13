@@ -5,16 +5,34 @@ LatihanVSPSU
 VSP (Borehole Seismic) Processing Exercise using Seismic Unix
 fahdi@gm2001.net
 February 2012
+Last Update: April 2013
 
 DESCRIPTION
 -----------
 A sets of script to model and process simple geometry/simple VSP data 
+
+WARNING
+-------
+Forward modeling using ELA2D is still buggy and giving wrong results. 
 
 REQUIREMENT 
 -----------
 - Seismic Unix (http://www.cwp.mines.edu/cwpcodes/)
 - Ela2D (Get copy at http://www.gm2001.net/latihanvspsu/)
 
+UPDATE
+-------
+* Cosine Correction
+* Fixing bugs on sumedian application
+* Fixing some stuff on importing segy (making the scalco, scalel to actually work)
+
+BUGS
+-----
+Yes, this is a buggy scripts :)
+Somehow, I'm still not sure how to correctly apply scalco, and scalel 
+Decon still sucks
+and many more :) 
+
 EXAMPLE RESULT:
 ---------------
-http://i.imgur.com/Db9bC.jpg
+http://i.imgur.com/niCOZRu.jpg

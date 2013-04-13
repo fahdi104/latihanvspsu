@@ -1,8 +1,8 @@
 #!/bin/bash
 ## @file Clean.sh
-## @brief remove output of Flat Modeling exercise
+## @brief remove output of wavefield separatione exercise
 ## @author fahdi@gm2001.net
-## @date February 2012
+## @date April 2013 [update]
 
-rm *.su
 rm *.txt
+rm ../data/*.tmp

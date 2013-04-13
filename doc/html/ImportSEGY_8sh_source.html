@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Latihan VSP SU: 0ImportSEGY/ImportSEGY.sh Source File</title>
+<title>Latihan VSP SU: F:/apps/cygwin/home/fahdi/suvsp/0ImportSEGY/ImportSEGY.sh Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -73,40 +73,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 <div class="header">
   <div class="headertitle">
-<div class="title">0ImportSEGY/ImportSEGY.sh</div>  </div>
+<div class="title">F:/apps/cygwin/home/fahdi/suvsp/0ImportSEGY/ImportSEGY.sh</div>  </div>
 </div>
 <div class="contents">
 <a href="ImportSEGY_8sh.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#!/bin/bash</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span>
 <a name="l00016"></a>00016 <span class="preprocessor"># Input</span>
-<a name="l00017"></a>00017 <span class="preprocessor"></span>input=VSI_007_A_gac_wavefield_z.sgy
+<a name="l00017"></a>00017 <span class="preprocessor"></span>input=realZ.segy
 <a name="l00018"></a>00018 output=realZ.su
 <a name="l00019"></a>00019 
 <a name="l00020"></a>00020 <span class="preprocessor"># set parameter</span>
 <a name="l00021"></a>00021 <span class="preprocessor"></span>tmin=0 #start time
 <a name="l00022"></a>00022 tmax=4 #output time
 <a name="l00023"></a>00023 
-<a name="l00024"></a>00024 segyread tape=$input verbose=1 endian=0 | suwind tmin=$tmin tmax=$tmax &gt; $output.tmp1
+<a name="l00024"></a>00024 segyread tape=$input verbose=1 endian=0 | segyclean &gt; $output.tmp
 <a name="l00025"></a>00025 
 <a name="l00026"></a>00026 <span class="preprocessor">#housekeeping, just to make output SU available for XWIGB</span>
-<a name="l00027"></a>00027 <span class="preprocessor"></span><span class="preprocessor">#this is not a good practice, because I have to strip SEGY headers, will think about this later</span>
-<a name="l00028"></a>00028 <span class="preprocessor"></span>sugethw &lt; $output.tmp1 key=lagb,gelev | sed -e <span class="stringliteral">&#39;s/unscale=//&#39;</span> -e <span class="stringliteral">&#39;s/gelev=//&#39;</span> -e <span class="stringliteral">&#39;s/lagb=//&#39;</span>| sed <span class="stringliteral">&#39;/^$/d&#39;</span> &gt; tt-header.tmp
-<a name="l00029"></a>00029 awk <span class="stringliteral">&#39;{ printf &quot;%4f %4d\n&quot;, $1/1000, $2/100 }&#39;</span> tt-header.tmp &gt; tt-header.txt
-<a name="l00030"></a>00030 nrec=($(wc -l tt-header.txt | awk <span class="stringliteral">&#39;{print $1}&#39;</span>))
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032 awk <span class="stringliteral">&#39;{print $2}&#39;</span> tt-header.txt | a2b n1=$nrec &gt; gelev.bin
-<a name="l00033"></a>00033 sushw &lt; $output.tmp1 key=d1,scalel,scalco &gt; $output.tmp2
-<a name="l00034"></a>00034 sushw &lt; $output.tmp2 key=gelev infile=gelev.bin&gt; $output
-<a name="l00035"></a>00035 
-<a name="l00036"></a>00036 <span class="preprocessor">#display</span>
-<a name="l00037"></a>00037 <span class="preprocessor"></span>nrec=($(wc -l tt-header.txt | awk <span class="stringliteral">&#39;{print $1}&#39;</span>))
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039 suxwigb &lt; $output title=$input perc=97 style=vsp key=gelev curve=tt-header.txt npair=$nrec,1 curvecolor=red &amp;
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041 <span class="preprocessor">#clean up</span>
-<a name="l00042"></a>00042 <span class="preprocessor"></span>rm *.tmp*
-<a name="l00043"></a>00043 rm *.bin
-<a name="l00044"></a>00044 
+<a name="l00027"></a>00027 <span class="preprocessor"></span><span class="preprocessor">#get geometry to ascii</span>
+<a name="l00028"></a>00028 <span class="preprocessor"></span>sugethw &lt; $output.tmp key=lagb,gelev,scalel \
+<a name="l00029"></a>00029            | sed -e <span class="stringliteral">&#39;s/scalel=//&#39;</span> -e <span class="stringliteral">&#39;s/gelev=//&#39;</span> -e <span class="stringliteral">&#39;s/lagb=//&#39;</span>| sed <span class="stringliteral">&#39;/^$/d&#39;</span> &gt; tt-header.tmp
+<a name="l00030"></a>00030 awk <span class="stringliteral">&#39;{ printf &quot;%4f %2f\n&quot;, $1/1000, ($2/$3)*-1 }&#39;</span> tt-header.tmp &gt; tt-header.txt
+<a name="l00031"></a>00031 nrec=($(wc -l tt-header.txt | awk <span class="stringliteral">&#39;{print $1}&#39;</span>))
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033 <span class="preprocessor">#I don&#39;t know what&#39;s the correct convention for scalel &amp; scalco?</span>
+<a name="l00034"></a>00034 <span class="preprocessor"></span><span class="preprocessor">#I recomputed gelev to be 1 decimal and reset scalel acordingly</span>
+<a name="l00035"></a>00035 <span class="preprocessor"></span><span class="preprocessor">#furthermore scalel and scalco will be treated differently</span>
+<a name="l00036"></a>00036 <span class="preprocessor"></span>awk <span class="stringliteral">&#39;{print $2*10}&#39;</span> tt-header.txt | a2b n1=$nrec &gt; gelev.bin
+<a name="l00037"></a>00037 sushw &lt; $output.tmp key=gelev infile=gelev.bin&gt; $output.tmp2
+<a name="l00038"></a>00038 sushw &lt; $output.tmp2 key=scalel a=-1&gt; $output
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040 <span class="preprocessor">#display</span>
+<a name="l00041"></a>00041 <span class="preprocessor"></span>nrec=($(wc -l tt-header.txt | awk <span class="stringliteral">&#39;{print $1}&#39;</span>))
+<a name="l00042"></a>00042 suxwigb &lt; $output title=$input perc=99 style=vsp key=gelev curve=tt-header.txt npair=$nrec,1 curvecolor=red &amp;
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044 <span class="preprocessor">#clean up</span>
+<a name="l00045"></a>00045 <span class="preprocessor"></span>rm *.tmp*
+<a name="l00046"></a>00046 rm *.bin
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048 
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -126,7 +130,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 2 2012 21:55:53 for Latihan VSP SU by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 13 2013 17:03:38 for Latihan VSP SU by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.5.1
 </small></address>

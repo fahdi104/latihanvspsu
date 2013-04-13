@@ -4,10 +4,8 @@
 ## * @file DisplayPicks.sh
 ## * @brief Display T-D curve, Velocity, etc
 ## * @author fahdi@gm2001.net
-## * @date February 2012
-## * @todo run cosine correction, compute tt correction to SRD, compute interval velocity, rms velocity
+## * @date April 2013 [update]
 ## * @todo input well geometry for cosine correction
-## * @todo plotting velocity etc etc
 ## * @param input SU file to analyze
 ## * @param input_tt Transit Time file to check
 ## * @param output_tt Transit Time after correction To SRD
