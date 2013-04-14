@@ -1,0 +1,1755 @@
+AutoGen Definitions dummy;
+file = {
+  file-id   = 'ImportSEGY_8sh';
+  file-name = 'ImportSEGY.sh';
+    var = {
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'ImportSEGY_8sh_1abaff0d5496e9373df5ff61c57c8f2a9a';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'gelev';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/0ImportSEGY/ImportSEGY.sh';
+      var-mem-desc-line = '28';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'ImportSEGY_8sh_1a877535c3b6ffdf230bce90c82c597d17';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'input';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+realZ.segy
+output=realZ.su
+
+# set parameter
+tmin=0 #start time
+tmax=4 #output time
+
+segyread tape=$input verbose=1 endian=0 | segyclean > $output.tmp
+
+#housekeeping, just to make output SU available for XWIGB
+#get geometry to ascii
+sugethw < $output.tmp key=lagb
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/0ImportSEGY/ImportSEGY.sh';
+      var-mem-desc-line = '28';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    };
+  file-full-name  = 'F:/apps/cygwin/home/fahdi/suvsp/0ImportSEGY/ImportSEGY.sh';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Convert SEGY to SU format, setting required VSP headers.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+Clean.sh can be used to clean up 
+
+ @author fahdi@gm2001.net
+ @date April 2013 [update]
+\xrefitem todo 1. @param input Specify your input SEGY file
+ @param output Specify your output SU file
+ @param tmin Minimum Output time
+ @param tmax Maximum Output time
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'CreateFlatModel_8sh';
+  file-name = 'CreateFlatModel.sh';
+    var = {
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'CreateFlatModel_8sh_1ae4e7eece5179adfcee9ced5215dc5ba0';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+set by offset from wellhead contain layer check with $input_model
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'curve';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+${model}_receiver_list.txt
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/1BuildFlatModel/CreateFlatModel.sh';
+      var-mem-desc-line = '103';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'CreateFlatModel_8sh_1a9eff0f023ddb5c6ecff74a8bf4c86218';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+set by offset from wellhead contain layer check with $input_model
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'density';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+1930
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/1BuildFlatModel/CreateFlatModel.sh';
+      var-mem-desc-line = '67';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'CreateFlatModel_8sh_1a5dd8d166fc20e8a792dc9efca2854b1e';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+set by offset from wellhead contain layer
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'input_model';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+model.unif2
+ninf=8 #number of interface
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/1BuildFlatModel/CreateFlatModel.sh';
+      var-mem-desc-line = '64';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'CreateFlatModel_8sh_1aa4f7e1d166d82a812e6b3d28096a1d85';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'model_name';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+"../model/${model_name}"
+
+#define model dimension
+nx=100
+dx=10
+nz=300
+dz=10
+
+#set parameter
+#Define Shooting Geometry
+#wellhead location which will be receiver location
+whx=400
+why=0
+
+#receiver
+rcv_x=$((whx))
+rcv_spacing=15
+rcv_z0=200 
+nrcv=120
+
+#source
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/1BuildFlatModel/CreateFlatModel.sh';
+      var-mem-desc-line = '53';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'CreateFlatModel_8sh_1aa568c8844847abd97c06e2e86bfa5bed';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+set by offset from wellhead
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'offset';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+80
+src_z=5
+
+#We will create model where interface defined by $input_model
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/1BuildFlatModel/CreateFlatModel.sh';
+      var-mem-desc-line = '57';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'CreateFlatModel_8sh_1a54a8a8c9ee636229806c725d2ac70953';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+set by offset from wellhead contain layer check with $input_model
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'src_x';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+"${model} Vp" &
+ximage < ${model}_vel_S.dat n1=$nz d1=$dz n2=$nx d2=$dx legend=1 cmap=hsv2 npair=$nrcv
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/1BuildFlatModel/CreateFlatModel.sh';
+      var-mem-desc-line = '102';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'CreateFlatModel_8sh_1a96701300e550ee1bff34614de87a0dc9';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+set by offset from wellhead contain layer check with $input_model
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'Vp';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+1524
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/1BuildFlatModel/CreateFlatModel.sh';
+      var-mem-desc-line = '65';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'CreateFlatModel_8sh_1a3e17071145f899b04a3c5505c9690203';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+set by offset from wellhead contain layer check with $input_model
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'Vs';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+890
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/1BuildFlatModel/CreateFlatModel.sh';
+      var-mem-desc-line = '66';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    };
+  file-full-name  = 'F:/apps/cygwin/home/fahdi/suvsp/1BuildFlatModel/CreateFlatModel.sh';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Create Simple Flat Model.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+Clean.sh can be used to clean up 
+Model can be displayed by typing ./DisplayModel.sh
+
+ @author fahdi@gm2001.net
+ @date April 2013 [update]
+ @param nx Number of model sample in X direction
+ @param dx Model sampling rate in X direction
+ @param nz Number of model sample in Z direction
+ @param dz Model sampling rate in Z direction
+ @param whx Wellhead location X
+ @param why Wellhead location Y
+ @param rcv_x Receiver location X
+ @param rcv_spacing Receiver Spacing
+ @param rcv_z0 Depth of first receiver
+ @param nrcv Number of Receiver
+ @param offset Source Offset from wellhead
+ @param src_z Depth of source
+ @param ninf Number of interface in unif2 model
+ @param Vp P velocity for each layers
+ @param Vs S velocity for each layers
+ @param density Density for each layers
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'DisplayModel_8sh';
+  file-name = 'DisplayModel.sh';
+  file-full-name  = 'F:/apps/cygwin/home/fahdi/suvsp/1BuildFlatModel/DisplayModel.sh';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Display Created Model.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+ @author fahdi@gm2001.net
+ @date April 2013 [update]
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'CreateElasticSynthetic_8sh';
+  file-name = 'CreateElasticSynthetic.sh';
+    var = {
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'CreateElasticSynthetic_8sh_1ae91215f595e29c78165ac2d206977294';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+keep directory name the same keep directory name the same should use appropriate dt for time step modeling *todo implement resampling for final su data TODO CHECK
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = '!tmax';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+3  #maximum recording time
+f_cent=15 #dominant frequency
+
+#source
+#setting source
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/2Ela2D/CreateElasticSynthetic.sh';
+      var-mem-desc-line = '41';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'CreateElasticSynthetic_8sh_1ae9b86f6d28514bf4bf5a9d9bc8e94c8f';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+keep directory name the same keep directory name the same should use appropriate dt for time step modeling *todo implement resampling for final su data
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'dt';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+0.002 #set timestep and will also be samplin rate for out put data
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/2Ela2D/CreateElasticSynthetic.sh';
+      var-mem-desc-line = '36';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'CreateElasticSynthetic_8sh_1a21509791e00f6d04d8ac9b67b93403dc';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+keep directory name the same keep directory name the same should use appropriate dt for time step modeling *todo implement resampling for final su data TODO CHECK use *txt
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'from';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/2Ela2D/CreateElasticSynthetic.sh';
+      var-mem-desc-line = '41';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'CreateElasticSynthetic_8sh_1a6c3bb02f6cee280b29a08bf38400ff63';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+keep directory name the same keep directory name the same
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'model';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+model01
+
+#set parameter
+#Ela2D FD setup
+ * @todo this dt is for FD timestep modeling
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/2Ela2D/CreateElasticSynthetic.sh';
+      var-mem-desc-line = '34';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'CreateElasticSynthetic_8sh_1a84e4236f07668a770c27567f1f9615ff';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'nx';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+100
+dx=10
+nz=300
+dz=10
+outputX=../data/HMX.su #specify filename for horizontal component
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/2Ela2D/CreateElasticSynthetic.sh';
+      var-mem-desc-line = '28';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'CreateElasticSynthetic_8sh_1aa5ee1823138fd9e7e8bdac5851bb41c1';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+keep directory name the same
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'outputZ';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+../data/Z.su #specify filename for vertical component
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/2Ela2D/CreateElasticSynthetic.sh';
+      var-mem-desc-line = '29';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    };
+  file-full-name  = 'F:/apps/cygwin/home/fahdi/suvsp/2Ela2D/CreateElasticSynthetic.sh';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Do elastic synthetic modeling using ela2d, currently set using ricker wavelet, dilatational source.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+ @WARNING Ela2D is still buggy. Don't know why the direct P TT is slower
+Clean.sh can be used to clean up 
+Model can be displayed by typing ./DisplayModel.sh
+
+ @author fahdi@gm2001.net
+ @date April 2013 [update]
+\xrefitem todo 2. @param nx Number of model sample in X direction
+ @param dx Model sampling rate in X direction
+ @param nz Number of model sample in Z direction
+ @param dz Model sampling rate in Z direction
+ @param outputX Output for horizontal component
+ @param outputZ Output for vertical component
+ @param source_listing ASCII file for source listing (filename:source_list.txt, please do not change the filename)
+ @param receiver_listing ASCII file for receiver listing (filename:receiver_list.txt, please do not change the filename)
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'DisplaySynthetic_8sh';
+  file-name = 'DisplaySynthetic.sh';
+  file-full-name  = 'F:/apps/cygwin/home/fahdi/suvsp/2Ela2D/DisplaySynthetic.sh';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Display created sythetic model.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+ @author fahdi@gm2001.net
+ @date April 2013 [update]
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'BreakTimePick_8sh';
+  file-name = 'BreakTimePick.sh';
+    var = {
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'BreakTimePick_8sh_1a877535c3b6ffdf230bce90c82c597d17';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'input';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+Z.su
+output_picks=tt_picks_auto.txt #ASCII output of breaktime picking 
+
+#display data
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/BreakTimePick.sh';
+      var-mem-desc-line = '15';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    };
+  file-full-name  = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/BreakTimePick.sh';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Manually break time picking, using ximage picking utility.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+ @author fahdi@gm2001.net
+ @date April 2013 [update]
+ @param input SU file to be picked
+ @param output_picks ASCII file for automatic Transit Time pick result
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'DisplayPicks_8sh';
+  file-name = 'DisplayPicks.sh';
+  file-full-name  = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/DisplayPicks.sh';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Display T-D curve, Velocity, etc.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+ @author fahdi@gm2001.net
+ @date April 2013 [update]
+\xrefitem todo 3. @param input SU file to analyze
+ @param input_tt Transit Time file to check
+ @param output_tt Transit Time after correction To SRD
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'FBAutoPick_8sh';
+  file-name = 'FBAutoPick.sh';
+    var = {
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'FBAutoPick_8sh_1a0e4685769f2344119af764ca2c453138';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+unscale
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'infile';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+"Z Component" perc=99.5 style=vsp key=gelev \
+	curve=$output_picks npair=$nrec
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/FBAutoPick.sh';
+      var-mem-desc-line = '38';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'FBAutoPick_8sh_1a877535c3b6ffdf230bce90c82c597d17';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'input';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+"ttSmoothing('$output_picks')"
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/FBAutoPick.sh';
+      var-mem-desc-line = '27';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'FBAutoPick_8sh_1af49c44a63c231c4e2d20f848f7e50eda';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'nrec';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+($(wc -l $output_picks | awk '{print $1}')) #calculate number of receiver
+
+awk '{print $1*1000," ",$1}' $output_picks > tt.tmp
+a2b < tt.tmp n1=$nrec> tt.bin
+sushw < $input key=lagb
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/FBAutoPick.sh';
+      var-mem-desc-line = '34';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    };
+  file-full-name  = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/FBAutoPick.sh';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Automatic FB picking.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+ @author fahdi@gm2001.net
+ @date April 2013 [update]
+ @param input SU file to be picked
+ @param window_pick searching window for break time pick
+ @param output SU file after picked
+ @param output_picks ASCII file for automatic Transit Time pick result
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'geomcos_8awk';
+  file-name = 'geomcos.awk';
+    func = {
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'geomcos_8awk_1af3db7383f7184e74e79750995147edf6';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+function
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'applyscalco';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+var
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+scal
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+      func-mem-desc-line = '10';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'geomcos_8awk_1a76524b1f2f55446f296e11fb3ee91174';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+function
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'applyscalel';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+var
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+scal
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+      func-mem-desc-line = '4';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'geomcos_8awk_1adff4258282e3b3d2ecec494baefc1fcf';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+function
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'dist';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+x1
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+y1
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+x2
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+y2
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+      func-mem-desc-line = '16';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'geomcos_8awk_1acc0ad09ddd66a18c81473f796dafdb0e';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+dz[NR] dt[NR] dz[NR]
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'dz';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+dt-
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'dt';
+        func-mem-param-array = '[NR][NR-1]';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+      func-mem-desc-line = '78';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'geomcos_8awk_1a760f1b5d15f8988f10de284a82fdc2ff';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+function
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'getangle';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+sroffset
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+rz
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+sz
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+      func-mem-desc-line = '22';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referenceto = {
+        func-mem-ref-id = 'geomcos_8awk_1ad5f20d90d9d1c7d1b97a4737f5a52321';
+        func-mem-ref-line = '77';
+        func-mem-ref-name = 'rz';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'geomcos_8awk_1ab3ab48de5497ae5af592fb459ce03893';
+        func-mem-ref-line = '77';
+        func-mem-ref-name = 'sroffset';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'geomcos_8awk_1a81dfce6492cacae2d67daad2856157b7';
+        func-mem-ref-line = '77';
+        func-mem-ref-name = 'sz';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'geomcos_8awk_1a556401d06ca3944c6ae239658bd480ba';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+function
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'getazi';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+x1
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+y1
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+x2
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+y2
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+      func-mem-desc-line = '30';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'geomcos_8awk_1a24c57769f97dee97a7acb5b0fb907030';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+function
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'getstat';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+z1
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+z2
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+v
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+      func-mem-desc-line = '37';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'geomcos_8awk_1adb5bd38de468f5491dbe20cc3818e88e';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+function
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'tosrd';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+var
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+log_zero
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+      func-mem-desc-line = '43';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    };
+    var = {
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'geomcos_8awk_1a60d28e417cda8ed5b817c14e537c5629';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'cl';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+      var-mem-desc-line = '78';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'geomcos_8awk_1a28d8ec3d6927d716294143849ad8a7e3';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+dz[NR] dt[NR]
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'dt';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+      var-mem-desc-line = '78';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'geomcos_8awk_1a34e81876a8f9823de1bd1218cbca7138';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+dz[NR]
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'dz';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+      var-mem-desc-line = '78';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'geomcos_8awk_1afba60f76868334dbe89d8561b0e8e36d';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'roffset';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+      var-mem-desc-line = '78';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'geomcos_8awk_1a8e5b33bf1e98bb467edc31c48fde245f';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'rx';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+      var-mem-desc-line = '78';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'geomcos_8awk_1a44e6641f3ca0341724a1e46d2883529d';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'ry';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+      var-mem-desc-line = '78';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'geomcos_8awk_1ad5f20d90d9d1c7d1b97a4737f5a52321';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'rz';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+      var-mem-desc-line = '78';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-referenceby = {
+        var-mem-ref-id = 'geomcos_8awk_1a760f1b5d15f8988f10de284a82fdc2ff';
+        var-mem-ref-line = '21';
+        var-mem-ref-name = 'getangle';
+    };
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'geomcos_8awk_1ab3ab48de5497ae5af592fb459ce03893';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'sroffset';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+      var-mem-desc-line = '78';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-referenceby = {
+        var-mem-ref-id = 'geomcos_8awk_1a760f1b5d15f8988f10de284a82fdc2ff';
+        var-mem-ref-line = '21';
+        var-mem-ref-name = 'getangle';
+    };
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'geomcos_8awk_1a7afc17458780fd4f38cf4b53da58342e';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'sx';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+      var-mem-desc-line = '78';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'geomcos_8awk_1a22828bc75d634212ef406fa49c02e2ca';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'sy';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+      var-mem-desc-line = '78';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'geomcos_8awk_1a81dfce6492cacae2d67daad2856157b7';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'sz';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+      var-mem-desc-line = '78';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-referenceby = {
+        var-mem-ref-id = 'geomcos_8awk_1a760f1b5d15f8988f10de284a82fdc2ff';
+        var-mem-ref-line = '21';
+        var-mem-ref-name = 'getangle';
+    };
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'geomcos_8awk_1a05d01f05c388e14fb3855dded0ce399a';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'tt_obs';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+      var-mem-desc-line = '78';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'geomcos_8awk_1a958c8b7cacdf5045822975ced35021ce';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'tt_srd';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+      var-mem-desc-line = '78';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'geomcos_8awk_1a8e966d041604491e41d4719e7bec5e7e';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'tt_vert';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+      var-mem-desc-line = '78';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    };
+  file-full-name  = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/geomcos.awk';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'Suttcorr_8sh';
+  file-name = 'Suttcorr.sh';
+    var = {
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'Suttcorr_8sh_1abaff0d5496e9373df5ff61c57c8f2a9a';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'gelev';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/Suttcorr.sh';
+      var-mem-desc-line = '46';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'Suttcorr_8sh_1a58d51773e65b1d6d4e52e7d07b58f5a5';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'gx';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/Suttcorr.sh';
+      var-mem-desc-line = '46';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'Suttcorr_8sh_1a7c4266037522c25dbe4b306df6e0762e';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'gy';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/Suttcorr.sh';
+      var-mem-desc-line = '46';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'Suttcorr_8sh_1a877535c3b6ffdf230bce90c82c597d17';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'input';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+../data/Z.su
+output=../data/Z_picked_srd.su
+out_table=../data/checkshot_report.txt
+out_tt_curve=../data/tt_picks_srd.txt #just to make easier when plotting :)
+
+srd=0 #srd elevation
+log_zero=6.0 #start of logging measurement
+
+vmedium=1570 #replacement velocity from source position to SRD 
+vhyd=1524 #replacement velocity from hydrophone position to source position
+
+#wellhead location
+wellx=xxx
+welly=xxx
+
+#source information
+src_offset=95.0 #source offset from wellhead
+src_azi=288 #source azimuth from north
+src_z_log_zero=6.5  #source position/depth from logging zero
+
+#source_sensor information
+sensor_offset=95 #source_sensor offset from wellhead
+sensor_azi=288 #source_sensor azimuth from north
+sensor_z_log_zero=6.5 #source_sensor position/depth from logging zero
+
+#end of input
+
+tmin=0.0
+tmax=5.0
+
+#receiver position X &Y taken from SU file header, 
+#gelev assumed to be receiver z from log zero, please check manually
+
+#get all headers, write into table
+sugethw < $input key=tracr
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/Suttcorr.sh';
+      var-mem-desc-line = '46';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'Suttcorr_8sh_1afdf4245a02ad7aeec8f84f51bdcb60f3';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'scalco';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/Suttcorr.sh';
+      var-mem-desc-line = '46';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'Suttcorr_8sh_1a45d36ee30aa53cd166c208f8a682d594';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'scalel';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/Suttcorr.sh';
+      var-mem-desc-line = '46';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'Suttcorr_8sh_1a6844717404ddc99fe608ad1a4285db3c';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'sdepth';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/Suttcorr.sh';
+      var-mem-desc-line = '46';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'Suttcorr_8sh_1a7afc17458780fd4f38cf4b53da58342e';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'sx';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/Suttcorr.sh';
+      var-mem-desc-line = '46';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'Suttcorr_8sh_1a22828bc75d634212ef406fa49c02e2ca';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'sy';
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/Suttcorr.sh';
+      var-mem-desc-line = '46';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    };
+  file-full-name  = 'F:/apps/cygwin/home/fahdi/suvsp/3BreakTimePick/Suttcorr.sh';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Geometric and transit time correction for VSP Data - Checkshot Computation (Simplified to vertical well with cosine correction)
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+ @author fahdi@gm2001.net
+ @date March 2013
+ @param input SU file to correction
+ @param ascii ASCII TABLE
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'FrequencyAnalysis_8sh';
+  file-name = 'FrequencyAnalysis.sh';
+  file-full-name  = 'F:/apps/cygwin/home/fahdi/suvsp/4Preprocessing/FrequencyAnalysis.sh';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Create FZ Spectrum & FK-Spectrum.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+ @author fahdi@gm2001.net
+ @date April 2013 [update]
+ @param input SU file to analyze
+ @param output_fz Spectrum of Frequency vs Depth in SU format
+ @param output_fk Spectrum of Frequency vs Wavenumber in SU format
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'Preprocessing_8sh';
+  file-name = 'Preprocessing.sh';
+    var = {
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'Preprocessing_8sh_1a877535c3b6ffdf230bce90c82c597d17';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'input';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+../data/Z_picked_srd.su
+output_bpf=../data/Z_picked_bpf.su # output after BPF
+output_norm=../data/Z_picked_bpf_norm.su #output after BPF followed RMS Normalization
+output_tvg=../data/Z_picked_bpf_norm_tvg.su #output after BPF followed RMS Normalization followed by TimeVaryingGain
+final_output=../data/Z_prepro.su 
+
+#get tt pick from header
+#tt_picks=../data/tt_picks_auto.txt
+#gettime pick from header
+sugethw < $input key=lagb,gelev,scalel \
+	| sed -e 's/scalel=
+awk '{ printf "%4f %2f\n", $1/1000, ($2/(10^($3*-1))) }' tt-header.tmp > tt-header.txt
+tt_picks=tt-header.txt
+
+#set parameter
+bpf=5
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/4Preprocessing/Preprocessing.sh';
+      var-mem-desc-line = '34';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'Preprocessing_8sh_1aaeddbfc5971800025f7a94407b325777';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'tpow';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+1.4 #multiply data by t^tpow
+
+#bpf
+sufilter < $input f=$bpf > $output_bpf
+
+#normalize by dividing with RMS
+sugain < $output_bpf pbal=1 > $output_norm
+
+#run exponential gain
+sugain < $output_norm tpow=$tpow > $output_tvg
+cp $output_tvg $final_output #housekeeping to make naming convention
+
+#display
+nrec=($(wc -l $tt_picks | awk '{print $1}')) #housekeeping
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/4Preprocessing/Preprocessing.sh';
+      var-mem-desc-line = '48';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    };
+  file-full-name  = 'F:/apps/cygwin/home/fahdi/suvsp/4Preprocessing/Preprocessing.sh';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Do Preprocessing: BPF, Normalize, TVG.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+ @author fahdi@gm2001.net
+ @date April 2013 [update]
+\xrefitem todo 4. @param input SU file to process
+ @param output_bpf output SU file after BPF filter
+ @param bpf Four points of BPF filter
+ @param output_norm output SU file after normalization (RMS whole window operation)
+ @param output_tvg SU file after TimeVaryingGain (
+ @param tpow TVG constant
+ @param final_output Output after all preprocessing workflow in SU format
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'DisplaySeparation_8sh';
+  file-name = 'DisplaySeparation.sh';
+    var = {
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'DisplaySeparation_8sh_1a877535c3b6ffdf230bce90c82c597d17';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'input';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+"Residual after Downgoing Removal aligned at +TT (TWT)" key=gelev \
+	curve=twt.tmp npair=$nrec
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/5Separation/DisplaySeparation.sh';
+      var-mem-desc-line = '51';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    };
+  file-full-name  = 'F:/apps/cygwin/home/fahdi/suvsp/5Separation/DisplaySeparation.sh';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Display wavefield separation result.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+ @author fahdi@gm2001.net
+ @date April 2013 [update]
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'Separation_8sh';
+  file-name = 'Separation.sh';
+    var = {
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'Separation_8sh_1a877535c3b6ffdf230bce90c82c597d17';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'input';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+"Downgoing" perc=99 style=vsp key=gelev curve=$tt_picks npair=$nrec
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/5Separation/Separation.sh';
+      var-mem-desc-line = '63';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    };
+  file-full-name  = 'F:/apps/cygwin/home/fahdi/suvsp/5Separation/Separation.sh';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Run wavefield separation based on TT using median velocity filter.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+ @author fahdi@gm2001.net
+ @date April 2013 [update]
+ @param input SU file to separate after PreProcessing
+ @param output_dn Downgoing wavefield
+ @param output_res Residual Wavefield after downgoing wavefield subtraction
+ @param output_up Upgoing wavefield (Enhanced Residual)
+ @param output_res2 2nd Residual after Upgoing extraction
+ @param tt_picks ASCII file containing transit time picking 
+ @param level_down number median level for downngoing extraction
+ @param level_up number median level for upgoing extraction
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'ApplyPEFDecon_8sh';
+  file-name = 'ApplyPEFDecon.sh';
+    var = {
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'ApplyPEFDecon_8sh_1ad77e7b640e5d7b68595255e058f069f6';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'input_up';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+../data/velf_up.su
+output_pef_up=../data/pef_up.su
+output_pef_up_enh=../data/pef_up_enh.su
+enhc_up=5
+
+#set parameter
+minlag=0.015 #s
+maxlag=0.4 #s
+pnoise=0.0005
+bpf=3
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/6Deconvolution/ApplyPEFDecon.sh';
+      var-mem-desc-line = '29';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'ApplyPEFDecon_8sh_1a4a1891014e64e02d4411161b18c154cf';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'tmin';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+"Upgoing After PEF Decon (minlag:$minlag s, maxlag:$maxlag s)" key=gelev \
+	curve=twt.tmp npair=$nrec
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/6Deconvolution/ApplyPEFDecon.sh';
+      var-mem-desc-line = '83';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    };
+  file-full-name  = 'F:/apps/cygwin/home/fahdi/suvsp/6Deconvolution/ApplyPEFDecon.sh';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Apply PEF to upgoing wavefield.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+ @author fahdi@gm2001.net
+ @date April 2013 [update]
+\xrefitem todo 5. @param input_up Upgoing wavefield to be deconvolved
+ @param tt_picks ASCII file of Transit Time picks data
+ @param output_pef_up Upgoing Wavefield after predictive decon
+ @param output_pef_up_enh Enhancement of Upgoing Wavefield after predictive decon
+ @param enhc_up Number of median level for upgoing enhancement
+ @param minlag First lag of prediction filter (sec)
+ @param maxlag lag
+ @param pnoise relative additive noise level
+ @param bpf Four points of BPF filter
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'CheckAutoCorrelation_8sh';
+  file-name = 'CheckAutoCorrelation.sh';
+    var = {
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'CheckAutoCorrelation_8sh_1a079390e40217dc132097b01c4865fc0f';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'input_dn';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+../data/velf_dn.su
+output_pef_dn=../data/velf_dn.supef_dn.su
+
+#set parameter
+minlag=0.015 #s
+maxlag=0.4 #s
+pnoise=0.0005
+bpf=3
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/6Deconvolution/CheckAutoCorrelation.sh';
+      var-mem-desc-line = '25';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    };
+  file-full-name  = 'F:/apps/cygwin/home/fahdi/suvsp/6Deconvolution/CheckAutoCorrelation.sh';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Check auto correlation to determine optimum lag and prediction on downgoing wavefield.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+ @author fahdi@gm2001.net
+ @date April 2013 [update]
+\xrefitem todo 6. @param input_dn Downgoing wavefield
+ @param tt ASCII file of Transit Time picks data
+ @param output_pef_dn Downgoing wavefield after predictive deconvolution
+ @param minlag First lag of prediction filter (sec)
+ @param maxlag lag
+ @param pnoise relative additive noise level
+ @param bpf Four points of BPF filter
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'CorridorStack_8sh';
+  file-name = 'CorridorStack.sh';
+    var = {
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'CorridorStack_8sh_1ad53d74d87c42c6b4fb648ae5a92867f4';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'input_decon_enh_up';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+../data/pef_up_enh.su.align
+output_cstack=../data/corr_stack.su
+
+#set parameter
+corridor=0.08 #s
+except_last_trace=5
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = 'F:/apps/cygwin/home/fahdi/suvsp/7CorrStack/CorridorStack.sh';
+      var-mem-desc-line = '18';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    };
+  file-full-name  = 'F:/apps/cygwin/home/fahdi/suvsp/7CorrStack/CorridorStack.sh';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+Create corridor stack.
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+ @author fahdi@gm2001.net
+ @date April 2013 [update]
+ @param input_decon_enh_up Input is final upgoing wavefield (after decon)
+ @param output_cstack Corridor Stack Output
+ @param tt ASCII file of Transit Time picks data
+_EnD_oF_dEf_TeXt_;
+}; /* file */

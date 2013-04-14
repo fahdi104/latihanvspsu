@@ -1,0 +1,845 @@
+This is pdfeTeXk, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2013.4.6)  14 APR 2013 21:46
+entering extended mode
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**LatihanVSPsu.tex
+(./LatihanVSPsu.tex
+LaTeX2e <2003/12/01>
+Babel <v3.8d> and hyphenation patterns for american, french, german, ngerman, b
+ahasa, basque, bulgarian, catalan, croatian, czech, danish, dutch, esperanto, e
+stonian, finnish, greek, icelandic, irish, italian, latin, magyar, norsk, polis
+h, portuges, romanian, russian, serbian, slovak, slovene, spanish, swedish, tur
+kish, ukrainian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2004/02/16 v1.4f Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2004/02/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (./ifxetex.sty
+Package: ifxetex 2008/09/18 v0.4 Provides ifxetex conditional
+)
+(/usr/share/texmf/tex/latex/base/fontenc.sty
+Package: fontenc 2004/02/22 v1.99f Standard LaTeX package
+
+(/usr/share/texmf/tex/latex/base/t1enc.def
+File: t1enc.def 2004/02/22 v1.99f Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(/usr/share/texmf/tex/latex/base/inputenc.sty
+Package: inputenc 2004/02/05 v1.0d Input encoding file
+
+(/usr/share/texmf/tex/latex/base/utf8.def
+File: utf8.def 2004/02/09 v1.1b UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+(/usr/share/texmf/tex/latex/base/t1enc.dfu
+File: t1enc.dfu 2004/02/09 v1.1b UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+(/usr/share/texmf/tex/latex/base/ot1enc.dfu
+File: ot1enc.dfu 2004/02/09 v1.1b UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+(/usr/share/texmf/tex/latex/base/omsenc.dfu
+File: omsenc.dfu 2004/02/09 v1.1b UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+02D9 (decimal 729)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02CA (decimal 714)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+))
+(/usr/share/texmf/tex/latex/base/textcomp.sty
+Package: textcomp 2004/02/22 v1.99f Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+
+(/usr/share/texmf/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+(/usr/share/texmf/tex/latex/base/ts1enc.dfu
+File: ts1enc.dfu 2004/02/09 v1.1b UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E37 (decimal 3639)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+))
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 311.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 312.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 313.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 314.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 315.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 316.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 317.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 318.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 319.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 320.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 321.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 322.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 323.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.cfg
+File: graphics.cfg 2005/02/03 v1.3 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/pdftex.def
+File: pdftex.def 2002/06/19 v0.03k graphics/color for pdftex
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf/tex/latex/tools/array.sty
+Package: array 2003/12/17 v2.4a Tabular extension package (FMi)
+\col@sep=\dimen105
+\extrarowheight=\dimen106
+\NC@list=\toks15
+\extratabsurround=\skip43
+\backup@length=\skip44
+)
+(/usr/share/texmf/tex/latex/ulem/ulem.sty
+\UL@box=\box26
+\UL@hyphenbox=\box27
+\UL@skip=\skip45
+\UL@hook=\toks16
+\UL@pe=\count88
+\UL@pixel=\dimen107
+\ULC@box=\box28
+Package: ulem 2000/05/26
+\ULdepth=\dimen108
+)
+(/usr/share/texmf/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2002/01/22 v2.2d
+
+(/usr/share/texmf/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2001/10/25 v2.2f
+\@emptytoks=\toks17
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+))
+(/usr/share/texmf/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip46
+\f@ncyO@elh=\skip47
+\f@ncyO@erh=\skip48
+\f@ncyO@olh=\skip49
+\f@ncyO@orh=\skip50
+\f@ncyO@elf=\skip51
+\f@ncyO@erf=\skip52
+\f@ncyO@olf=\skip53
+\f@ncyO@orf=\skip54
+)
+(/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+
+(/usr/share/texmf/tex/latex/graphics/color.cfg
+File: color.cfg 2005/02/03 v1.3 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 125.
+)
+No file LatihanVSPsu.aux.
+\openout1 = `LatihanVSPsu.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 32.
+(/usr/share/texmf/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 32.
+
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+(/usr/share/texmf/tex/context/base/supp-mis.tex
+loading : Context Support Macros / Miscellaneous (2004.10.26)
+\protectiondepth=\count89
+\scratchcounter=\count90
+\scratchtoks=\toks18
+\scratchdimen=\dimen109
+\scratchskip=\skip55
+\scratchmuskip=\muskip10
+\scratchbox=\box29
+\scratchread=\read1
+\scratchwrite=\write3
+\zeropoint=\dimen110
+\onepoint=\dimen111
+\onebasepoint=\dimen112
+\minusone=\count91
+\thousandpoint=\dimen113
+\onerealpoint=\dimen114
+\emptytoks=\toks19
+\nextbox=\box30
+\nextdepth=\dimen115
+\everyline=\toks20
+\!!counta=\count92
+\!!countb=\count93
+\recursecounter=\count94
+)
+loading : Context Support Macros / PDF (2004.03.26)
+\nofMPsegments=\count95
+\nofMParguments=\count96
+\MPscratchCnt=\count97
+\MPscratchDim=\dimen116
+\MPnumerator=\count98
+\everyMPtoPDFconversion=\toks21
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5]
+
+LaTeX Warning: Reference `AAAAAAAAAB' on page 6 undefined on input line 249.
+
+
+LaTeX Warning: Reference `AAAAAAAAAC' on page 6 undefined on input line 252.
+
+
+Overfull \hbox (13.89403pt too wide) in paragraph at lines 252--253
+ []\T1/cmr/bx/n/10 1BuildFlatModel/CreateFlatModel.sh (Cre-ate Sim-ple Flat Mod
+el
+ []
+
+
+LaTeX Warning: Reference `AAAAAAAAAE' on page 6 undefined on input line 256.
+
+
+LaTeX Warning: Reference `AAAAAAAAAI' on page 6 undefined on input line 259.
+
+
+LaTeX Warning: Reference `AAAAAAAAAJ' on page 6 undefined on input line 263.
+
+
+LaTeX Warning: Reference `AAAAAAAAAK' on page 6 undefined on input line 267.
+
+
+Overfull \hbox (7.25815pt too wide) in paragraph at lines 267--268
+ []\T1/cmr/bx/n/10 4Preprocessing/Preprocessing.sh (Do Pre-pro-cess-ing: BPF, N
+or-
+ []
+
+
+LaTeX Warning: Reference `AAAAAAAAAM' on page 6 undefined on input line 271.
+
+
+LaTeX Warning: Reference `AAAAAAAAAN' on page 6 undefined on input line 274.
+
+
+LaTeX Warning: Reference `AAAAAAAAAO' on page 6 undefined on input line 278.
+
+
+LaTeX Warning: Reference `AAAAAAAAAP' on page 6 undefined on input line 281.
+
+[6]
+LaTeX Font Info:    Try loading font information for U+msa on input line 336.
+ (/usr/share/texmf/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 336.
+
+(/usr/share/texmf/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+) [7]
+Overfull \hbox (37.35474pt too wide) in paragraph at lines 401--402
+[]\T1/cmr/m/n/10 00023 segyread tape=$input ver-bose=1 en-dian=0 | suwind tmin=
+$tmin tmax=$tmax 
+ []
+
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 404.
+
+(/usr/share/texmf/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+) [8] [9] [10]
+<LatihanVSPsu-fig001.png, id=39, 1192.455pt x 737.75626pt>
+File: LatihanVSPsu-fig001.png Graphic file (type png)
+
+<use LatihanVSPsu-fig001.png>
+Overfull \hbox (132.99951pt too wide) in paragraph at lines 597--600
+[][] 
+ []
+
+[11] [12 <./LatihanVSPsu-fig001.png>] [13]
+Overfull \hbox (44.35303pt too wide) in paragraph at lines 791--792
+[]\T1/cmr/m/n/10 00085 awk -v rcv_z0=${rcv_z0} -v rcv_spacing=${rcv_spacing} -v
+ rcv_x=${rcv_x} 
+ []
+
+[14]
+Overfull \hbox (20.6366pt too wide) in paragraph at lines 828--829
+[]\T1/cmr/m/n/10 00096 xim-age \T1/cmtt/m/n/10 < \T1/cmr/m/n/10 vel_P.dat n1=$n
+z d1=$dz n2=$nx d2=$dx leg-end=1 cmap=hsv2 
+ []
+
+
+Overfull \hbox (5.22003pt too wide) in paragraph at lines 840--841
+[]\T1/cmr/m/n/10 00098 xim-age \T1/cmtt/m/n/10 < \T1/cmr/m/n/10 vel_S.dat n1=$n
+z d1=$dz n2=$nx d2=$dx leg-end=1 cmap=hsv2 
+ []
+
+
+Overfull \hbox (9.99664pt too wide) in paragraph at lines 852--853
+[]\T1/cmr/m/n/10 00100 xim-age \T1/cmtt/m/n/10 < \T1/cmr/m/n/10 den-sity.dat n1
+=$nz d1=$dz n2=$nx d2=$dx leg-end=1 cmap=hsv2 
+ []
+
+[15]
+Overfull \hbox (7.67508pt too wide) in paragraph at lines 956--956
+[]|\T1/cmr/m/n/10 s\T1/cmr/m/it/10 ource_listing|  
+ []
+
+
+Overfull \hbox (14.0346pt too wide) in paragraph at lines 959--959
+[]|\T1/cmr/m/n/10 r\T1/cmr/m/it/10 eceiver_listing|  
+ []
+
+[16] [17] <LatihanVSPsu-fig002.png, id=62, 1115.16624pt x 727.71875pt>
+File: LatihanVSPsu-fig002.png Graphic file (type png)
+
+<use LatihanVSPsu-fig002.png>
+Overfull \hbox (121.98833pt too wide) in paragraph at lines 991--994
+[][] 
+ []
+
+[18 <./LatihanVSPsu-fig002.png>]
+Overfull \hbox (3.51721pt too wide) in paragraph at lines 1081--1082
+[]\T1/cmr/m/n/10 00041 #DO NOT MOD-IFY LINE AF-TER THIS, UN-LESS YOU KNOW WHAT
+ []
+
+[19] [20] [21]
+Overfull \hbox (3.42892pt too wide) in paragraph at lines 1345--1345
+[]|\T1/cmr/m/n/10 o\T1/cmr/m/it/10 utput_picks|  
+ []
+
+[22] [23] <LatihanVSPsu-fig003.png, id=83, 560.0925pt x 729.72626pt>
+File: LatihanVSPsu-fig003.png Graphic file (type png)
+
+<use LatihanVSPsu-fig003.png>
+<LatihanVSPsu-fig004.png, id=84, 610.28pt x 629.35126pt>
+File: LatihanVSPsu-fig004.png Graphic file (type png)
+
+<use LatihanVSPsu-fig004.png> [24 <./LatihanVSPsu-fig003.png>] [25 <./LatihanVS
+Psu-fig004.png>] [26] [27]
+<LatihanVSPsu-fig005.pdf, id=98, 362.35374pt x 547.04375pt>
+File: LatihanVSPsu-fig005.pdf Graphic file (type pdf)
+
+<use LatihanVSPsu-fig005.pdf> [28 <./LatihanVSPsu-fig005.pdf>]
+<LatihanVSPsu-fig006.png, id=109, 903.375pt x 726.715pt>
+File: LatihanVSPsu-fig006.png Graphic file (type png)
+
+<use LatihanVSPsu-fig006.png>
+Overfull \hbox (5.56422pt too wide) in paragraph at lines 1594--1597
+ [][] 
+ []
+
+[29 <./LatihanVSPsu-fig006.png>] [30]
+Overfull \hbox (127.59183pt too wide) in paragraph at lines 1758--1759
+[]\T1/cmr/m/n/10 - SU file for each pro-cess (af-ter BPF, af-ter BPF+Normalizat
+ion, af-ter BPF+Normalization+TimeVaryingGain 
+ []
+
+
+Overfull \hbox (5.03596pt too wide) in paragraph at lines 1778--1778
+[]|\T1/cmr/m/n/10 o\T1/cmr/m/it/10 utput_norm|  
+ []
+
+
+Overfull \hbox (1.61275pt too wide) in paragraph at lines 1785--1785
+[]|\T1/cmr/m/n/10 f\T1/cmr/m/it/10 inal_output|  
+ []
+
+[31] <LatihanVSPsu-fig007.png, id=120, 1014.79124pt x 727.71875pt>
+File: LatihanVSPsu-fig007.png Graphic file (type png)
+
+<use LatihanVSPsu-fig007.png>
+Overfull \hbox (18.96194pt too wide) in paragraph at lines 1818--1821
+ [] 
+ []
+
+<LatihanVSPsu-fig008.png, id=121, 1014.79124pt x 724.7075pt> [32 <./LatihanVSPs
+u-fig007.png>]
+File: LatihanVSPsu-fig008.png Graphic file (type png)
+ <use LatihanVSPsu-fig008.png>
+Overfull \hbox (18.9929pt too wide) in paragraph at lines 1827--1830
+ [][] 
+ []
+
+
+Overfull \hbox (3.10834pt too wide) in paragraph at lines 1860--1861
+[]\T1/cmr/m/n/10 00021 out-put_norm=Z_picked_bpf_norm.su #out-put af-ter BPF fo
+l-lowed RMS 
+ []
+
+[33 <./LatihanVSPsu-fig008.png>]
+Overfull \hbox (7.19177pt too wide) in paragraph at lines 1939--1941
+[]\T1/cmr/m/n/10 00042 suxwigb \T1/cmtt/m/n/10 < \T1/cmr/m/n/10 $out-put_norm t
+i-tle=\T1/cmtt/m/n/10 "\T1/cmr/m/n/10 BPF: $bpf + Nor-mal-ize by RMS\T1/cmtt/m/
+n/10 " \T1/cmr/m/n/10 perc=97 
+ []
+
+[34] [35] <LatihanVSPsu-fig009.png, id=134, 1018.80624pt x 728.7225pt>
+File: LatihanVSPsu-fig009.png Graphic file (type png)
+
+<use LatihanVSPsu-fig009.png>
+<LatihanVSPsu-fig010.png, id=135, 1016.79875pt x 725.71124pt> [36 <./LatihanVSP
+su-fig009.png>]
+File: LatihanVSPsu-fig010.png Graphic file (type png)
+ <use LatihanVSPsu-fig010.png> [37 <./LatihanVSPsu-fig010.png>]
+Overfull \hbox (4.78009pt too wide) in paragraph at lines 2209--2210
+[]\T1/cmr/m/n/10 nshift=$nrec sub-tract=0 me-dian=1 nmed=$level_up sign=+1\T1/c
+mtt/m/n/10 > \T1/cmr/m/n/10 $out-put_up 
+ []
+
+[38]
+Overfull \hbox (10.97302pt too wide) in paragraph at lines 2217--2218
+[]\T1/cmr/m/n/10 nshift=$nrec sub-tract=1 me-dian=1 nmed=$level_up sign=+1\T1/c
+mtt/m/n/10 > \T1/cmr/m/n/10 $out-put_res2 
+ []
+
+
+Overfull \hbox (10.802pt too wide) in paragraph at lines 2234--2236
+[]\T1/cmr/m/n/10 00048 suxwigb \T1/cmtt/m/n/10 < \T1/cmr/m/n/10 $in-put ti-tle=
+\T1/cmtt/m/n/10 "\T1/cmr/m/n/10 Z\T1/cmtt/m/n/10 " \T1/cmr/m/n/10 perc=97 style
+=vsp key=gelev curve=$timePicks 
+ []
+
+
+Overfull \hbox (0.85999pt too wide) in paragraph at lines 2280--2282
+[]\T1/cmr/m/n/10 00052 suxwigb \T1/cmtt/m/n/10 < \T1/cmr/m/n/10 $out-put_res2 t
+i-tle=\T1/cmtt/m/n/10 "\T1/cmr/m/n/10 Residual-2\T1/cmtt/m/n/10 " \T1/cmr/m/n/1
+0 perc=97 style=vsp key=gelev 
+ []
+
+
+Overfull \hbox (25.40955pt too wide) in paragraph at lines 2295--2296
+\T1/cmr/m/n/10 26Deconvolution/CheckAutoCorrelation.sh6Deconvolution/CheckAutoC
+orrelation.sh[] 
+ []
+
+[39]
+Overfull \hbox (12.57298pt too wide) in paragraph at lines 2364--2364
+[]|\T1/cmr/m/n/10 o\T1/cmr/m/it/10 utput_pef_dn|  
+ []
+
+[40] <LatihanVSPsu-fig011.png, id=152, 1117.17375pt x 722.7pt>
+File: LatihanVSPsu-fig011.png Graphic file (type png)
+
+<use LatihanVSPsu-fig011.png>
+Overfull \hbox (64.00092pt too wide) in paragraph at lines 2405--2408
+ [] 
+ []
+
+<LatihanVSPsu-fig012.png, id=153, 1122.1925pt x 726.715pt>
+File: LatihanVSPsu-fig012.png Graphic file (type png)
+
+<use LatihanVSPsu-fig012.png>
+Overfull \hbox (56.98558pt too wide) in paragraph at lines 2414--2417
+ [][] 
+ []
+
+[41 <./LatihanVSPsu-fig011.png>] [42 <./LatihanVSPsu-fig012.png>] [43] [44]
+Overfull \hbox (12.18163pt too wide) in paragraph at lines 2670--2670
+[]|\T1/cmr/m/n/10 o\T1/cmr/m/it/10 utput_pef_up|  
+ []
+
+
+Overfull \hbox (35.31184pt too wide) in paragraph at lines 2672--2672
+[]|\T1/cmr/m/n/10 o\T1/cmr/m/it/10 utput_pef_up_enh|  
+ []
+
+[45] <LatihanVSPsu-fig013.png, id=170, 1117.17375pt x 728.7225pt>
+File: LatihanVSPsu-fig013.png Graphic file (type png)
+
+<use LatihanVSPsu-fig013.png>
+Overfull \hbox (64.00092pt too wide) in paragraph at lines 2715--2718
+ [] 
+ []
+
+<LatihanVSPsu-fig014.png, id=171, 560.0925pt x 729.72626pt>
+File: LatihanVSPsu-fig014.png Graphic file (type png)
+
+<use LatihanVSPsu-fig014.png> [46 <./LatihanVSPsu-fig013.png>] [47 <./LatihanVS
+Psu-fig014.png>] [48]
+Overfull \hbox (13.60687pt too wide) in paragraph at lines 2933--2935
+[]\T1/cmr/m/n/10 00071 sushw \T1/cmtt/m/n/10 < \T1/cmr/m/n/10 $out-put_pef_up i
+n-file=tt_header.bin key=delrt | suchw key1=delrt 
+ []
+
+[49] [50]
+Overfull \hbox (16.27289pt too wide) in paragraph at lines 3044--3046
+[]\T1/cmr/m/n/10 For re-flec-tion be-low TD, we in-clude num-ber of traces (de-
+fined by ex-cept_last_trace)
+ []
+
+
+Overfull \hbox (8.53876pt too wide) in paragraph at lines 3084--3084
+[]|\T1/cmr/m/n/10 o\T1/cmr/m/it/10 utput_cstack|  
+ []
+
+[51] <LatihanVSPsu-fig015.png, id=191, 768.8725pt x 725.71124pt>
+File: LatihanVSPsu-fig015.png Graphic file (type png)
+
+<use LatihanVSPsu-fig015.png>
+Overfull \hbox (120.01091pt too wide) in paragraph at lines 3117--3120
+[][] 
+ []
+
+[52 <./LatihanVSPsu-fig015.png>] [53] [54] [55] (./LatihanVSPsu.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2593 strings out of 94500
+ 30992 string characters out of 1176767
+ 71206 words of memory out of 1000000
+ 5724 multiletter control sequences out of 10000+50000
+ 13363 words of font info for 34 fonts, out of 500000 for 2000
+ 580 hyphenation exceptions out of 1000
+ 28i,12n,43p,228b,345s stack positions out of 1500i,500n,5000p,200000b,5000s
+PDF statistics:
+ 204 PDF objects out of 300000
+ 0 named destinations out of 131072
+ 76 words of extra memory for PDF output out of 65536
+ </var/cache/fonts/pk/ljfour/jknappen/ec/ecbi1000.600pk> </var/cache/fonts/pk
+/ljfour/jknappen/ec/ectt1000.600pk> </var/cache/fonts/pk/ljfour/jknappen/ec/ect
+i1000.600pk> </var/cache/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </var/cach
+e/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </var/cache/fonts/pk/ljfour/jknap
+pen/ec/ecrm1000.600pk> </var/cache/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk>
+Output written on LatihanVSPsu.pdf (55 pages, 1016391 bytes).
